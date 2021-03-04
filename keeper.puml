@@ -1,0 +1,47 @@
+@startuml
+
+!include <tupadr3/common>
+!define ICONURL https://raw.githubusercontent.com/Roemer/plantuml-office/master/office2014
+!includeurl ICONURL/Concepts/document.puml
+!includeurl ICONURL/Concepts/documents.puml
+
+[GRETL - keeper] as keep
+
+package "Vector - Master"{
+
+    database "Geo-DB" {
+        [ili-schema] as schema
+    }
+
+    package "Dateien" {
+        OFF_DOCUMENT(mvec, "master.xtf")
+    }
+}
+
+package "Non-Vector - Master"{
+
+    OFF_DOCUMENT(mother, "master.tif, ...")
+}
+
+package "Dateiablage" {
+    package "Vector"{
+        OFF_DOCUMENTS(vhead, "use: *.gpkg, ..." )
+        OFF_DOCUMENTS(vhist, "hist: *.xtf")
+    }
+
+    package "Non-Vec"{
+        OFF_DOCUMENTS(ohead, "use: *.tif, ..." )
+        OFF_DOCUMENTS(ohist, "hist: *.tif, ...")
+    }
+}
+
+schema --> keep
+mvec --> keep
+mother --> keep
+
+keep --> vhead
+keep --> vhist
+keep --> ohead
+keep --> ohist
+
+@enduml

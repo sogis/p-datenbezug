@@ -1,0 +1,42 @@
+@startuml
+
+!include <tupadr3/common>
+!define ICONURL https://raw.githubusercontent.com/Roemer/plantuml-office/master/office2014
+!includeurl ICONURL/Concepts/documents.puml
+!includeurl ICONURL/Concepts/application_web.puml
+!includeurl ICONURL/Concepts/application_generic.puml
+!includeurl ICONURL/Concepts/folders.puml
+
+[<$application_web> Web GIS] as wgc
+[<$application_generic> Datenbezug] as db
+[<$folders> HTTPs Directory] as http
+[<$folders> (s)FTP(s) Directory] as ftp
+
+http -[hidden]-> ftp
+
+wgc --> db : URL open
+db --> http : uses
+
+:Anwender: as u
+:Experte: as p
+:Maschine: as m
+
+usecase "Sichten: Daten suchen,\nsichten, und beziehen" as browse
+usecase "Suchen: Daten suchen und\nbeziehen (Ohne Sichtung)" as search
+usecase "Laden: Bekannte Daten\n(erneut) beziehen" as load
+
+browse -[hidden]-> search
+search -[hidden]-> load
+
+u -right-> browse
+u --> search
+p -right-> search
+p --> load
+m -right-> load
+
+browse -> wgc
+search -> db
+load -> http
+load -> ftp
+
+@enduml

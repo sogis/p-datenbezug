@@ -1,0 +1,71 @@
+@startuml
+
+!include <tupadr3/common>
+!define ICONURL https://raw.githubusercontent.com/Roemer/plantuml-office/master/office2014
+!includeurl ICONURL/Concepts/document.puml
+!includeurl ICONURL/Concepts/documents.puml
+
+
+
+[Datenbezug UI] as dbu
+
+package "Datenbezug - API"{
+    [Datenbezug "Worker" <2>] as dbw
+    () "REST <1>" as dbi
+    dbi -right- dbw
+
+    OFF_DOCUMENT(json, conf.json)
+    dbw -right-> json
+
+
+    package "GRETL - Runtime <3>" {
+        [ili2pg] as ipg
+        [xtf2any] as x2a
+
+        x2a -left-> ipg
+    }
+
+    package "Filecache (=Gradle Buildcache? <4>)" {
+        OFF_DOCUMENT(xtf, *.xtf)
+        OFF_DOCUMENT(gp, *.gpkg)
+        OFF_DOCUMENTS(shp, *_shp.zip)
+        OFF_DOCUMENTS(dxf, *_dxf.zip)
+    }
+
+    ipg --> xtf
+
+    x2a --> xtf
+    x2a --> gp
+    x2a --> shp
+    x2a --> dxf
+
+    dbw --> x2a
+
+
+}
+
+package SIMI {
+
+    [sql2json] as sj
+
+    database "SIMI-DB" {
+        [Metainformationen] as meta
+    }
+
+    sj --> meta
+}
+
+sj --> json
+
+database "Geodaten" {
+    [Topic Schema (ili2pg)] as schema
+}
+
+ipg --> schema
+
+
+dbu --> dbi
+
+@enduml
+
+

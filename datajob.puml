@@ -1,0 +1,61 @@
+@startuml
+
+!include <tupadr3/common>
+!define ICONURL https://raw.githubusercontent.com/Roemer/plantuml-office/master/office2014
+!includeurl ICONURL/Concepts/document.puml
+!includeurl ICONURL/Concepts/documents.puml
+
+package "Meta" {
+    database "Meta-DB" {
+        [tables] as tbl
+    }
+
+    [sql2json] as sj
+
+    sj --> tbl
+}
+
+package "GRETL Gradle Plugin" {
+
+    [keeper] as keep
+    OFF_DOCUMENT(conf, conf.json)
+
+    keep -left-> conf
+}
+
+package "Dateiablage Datenbezug - Gewässerschutz" {
+    () . as bez
+
+    OFF_DOCUMENT(xtfp, *_protected.xtf)
+    OFF_DOCUMENT(xtf, *.xtf)
+    OFF_DOCUMENT(gp, *.gpkg)
+    OFF_DOCUMENTS(shp, *_shp.zip)
+    OFF_DOCUMENTS(dxf, *_dxf.zip)
+
+    bez --> xtfp
+    bez --> xtf
+    bez --> gp
+    bez --> shp
+    bez --> dxf
+}
+
+package "Dateiablage History - Gewässerschutz" {
+    package "20210114" {
+        () . as hist
+
+        OFF_DOCUMENT(ili, *.ili)
+        OFF_DOCUMENTS(data, *_xtf.zip)
+        OFF_DOCUMENTS(datap, *_xtf_protected.zip)
+
+        hist --> ili
+        hist --> data
+        hist --> datap
+    }
+}
+
+sj --> conf
+
+keep --> bez
+keep --> hist
+
+@enduml
