@@ -23,7 +23,7 @@ package "GRETL Gradle Plugin" {
     keep -left-> conf
 }
 
-package "Dateiablage Datenbezug - Gewässerschutz" {
+package "Dateiablage - Gewässerschutz" {
     () . as bez
 
     OFF_DOCUMENT(xtfp, *_protected.xtf)
@@ -39,7 +39,7 @@ package "Dateiablage Datenbezug - Gewässerschutz" {
     bez --> dxf
 }
 
-package "Dateiablage History - Gewässerschutz" {
+package "Dateiablage - Gewässerschutz" {
     package "20210114" {
         () . as hist
 

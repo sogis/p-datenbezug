@@ -1,0 +1,37 @@
+@startuml
+
+!include <tupadr3/common>
+!define ICONURL https://raw.githubusercontent.com/Roemer/plantuml-office/master/office2014
+!includeurl ICONURL/Concepts/documents.puml
+!includeurl ICONURL/Concepts/document.puml
+!includeurl ICONURL/Concepts/application_generic.puml
+!includeurl ICONURL/Concepts/folders.puml
+
+[Web GIS] as wgc
+[<$application_generic> Datenbezug] as db
+
+package "Dateiablage"{
+    [<$folders> HTTPs Directory] as http
+    OFF_DOCUMENT(cat, catalog.json)
+}
+
+package "Meta" {
+    database "Meta-DB" {
+        [tables] as tbl
+    }
+
+    [sql2json] as sj
+
+    sj --> tbl
+}
+
+[API - WMS] as wms
+
+wgc --> db : URL open
+db --> http
+db --> cat
+db --> wms
+
+sj --> cat
+
+@enduml
