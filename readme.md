@@ -3,9 +3,6 @@
 Folgend wird das Grobkonzept des SO!GIS 2.0 Umsetzungsprojektes "Datenbezug" beschrieben. Das Grobkonzept stellt
 neben dem erstellten PMP die wichtigste Grundlage für den Phasenübergang in die Konzeptphase dar.
 
-PMP:
-* Marketing (Opendata)
-
 ## Kundensicht
 
 "Kunden" des Datenbezugs sind sowohl Menschen wie auch Maschinen. Ob die Personen innerhalb oder ausserhalb der 
@@ -13,8 +10,8 @@ kantonalen Verwaltung arbeiten, ist nicht relevant und darf keinen Unterschied m
 
 ![uebersicht](res/overview.png)
 
-**Benutzer**: $td Beschreibung von ebp übertragen
-* **Anwender:** Kann ein GIS im Bereich der für sein Fachgebiet notwendigen Funktionen anwenden. Hat aber bezüglich
+**Benutzer**:
+* **Anwender:** Kann ein Desktop-GIS im Bereich der für sein Fachgebiet notwendigen Funktionen anwenden. Hat aber bezüglich
   Geodatenformaten und Modellen kein fundiertes Wissen.
 * **Experte:** Verfügt über fundiertes Wissen bezüglich Geodaten - Verwendet diese Beispielsweise als Inputs
   in eigenen automatisierten Datenverarbeitungsprozessen.
@@ -34,11 +31,12 @@ kantonalen Verwaltung arbeiten, ist nicht relevant und darf keinen Unterschied m
 
 ## Komponentendiagramme
 * [Neue Komponenten der GRETL Publikations-Jobs](gretl_pub.md)
+* [Komponenten rund um die Webapplikation "Datenbezug"](bezug.md)
 
 ## Glossar
 
 * **Datensatz:** Menge an Datendateien, in welchen die Geodaten eines Themas vollständig enthalten sind. Bei Vektordaten
-  sind dies alle in **einem** INTERLIS-Modell beschriebenen Daten.
+  sind dies alle in **genau einem** INTERLIS-Modell beschriebenen Daten.
 * **Datenthema:** Siehe Thema.
 * **Modell:** = INTERLIS-Modell.
 * **Thema:** Fachthematisch eng gefasste Gruppe von Informationen. Ein Thema ist in **genau einem** Modell beschrieben
@@ -68,6 +66,7 @@ kantonalen Verwaltung arbeiten, ist nicht relevant und darf keinen Unterschied m
   geeigneten Form nun gemacht werden? Beispielsweise indem immer ein Group- oder Facadelayer existiert, welcher das
   Datenthema repräsentiert?
 * Ist es sinnvoll, den Katalog neben Json auch in INTERLIS-XML Form bereitzustellen? Aufwand / Ertrag?
+* Andere Kantone machen eine grosse Sache von wegen OGD - was machen wir da kommunikativ?
 * Bezüglich Dateiablage (AIO)
   * Zugriffsschutz: Wie wird dieser über alle Kanäle umgesetzt (http / ftp)? Die Informationen dazu sind vorhanden und
     können via catalog.json konsumiert werden.
@@ -75,27 +74,35 @@ kantonalen Verwaltung arbeiten, ist nicht relevant und darf keinen Unterschied m
     * Ordner umbenennen?
     * "Virtuelle" Verzeichnisse (Pointer)?
   * Welche Technologie kommt sinnvollerweise für sicheren FTP zum Einsatz? sFTP oder FTPs?
+  * Ueber welches Protokoll kann/soll der keeper die Kopieraktionen in der Dateiablage auslösen? (s)FTP(s)?
+* In welchem Umfang wird das Archiv ebenfalls in die Benutzeroberfläche des Datenbezugs integriert?
+* Welche Parameter übergibt der WGC dem Datenbezug via URL.
+* Wie werden die nur für eine kleine Benutzergruppe interessanten Edit-Daten in der Datenbezug-Webapp angeboten?
+* Eignet sich das "out of the box" REST-API von SIMI für die Aktualisierung mit dem "updated" timestamp, oder 
+  muss/soll (mit wenig code) ein spezifischer Endpunkt geschrieben werden?
   
 ## Entscheide
 
-* **Geschützte Attribute:** Diese werden in SIMI (und nicht mittels Annotation im Modell) geführt. Grund: Die Zugriffs-
-  Definition erfolgt über DataSetView, Rollen, Gruppen und Benutzer. Diese liegen alle in SIMI "integer und ganzheitlich" vor.
+* **Geschützte Attribute:** Diese werden in SIMI (und nicht mittels Annotation im Modell) geführt. Grund: Die 
+  Zugriffsdefinition erfolgt über DataSetView, Rollen, Gruppen und Benutzer. Diese liegen alle in SIMI "integer und ganzheitlich" vor.
   Das Nutzen der Annotations würde ein Verteilen der Master-Daten bedingen, mit Verlust der Unterstützung der 
   wichtigen referenziellen Integrität, welche uns die SIMI-DB "schenkt".  
 * **Langzeit-Archiv:** Die zusammen mit dem Staatsarchiv zu lösende Frage der Langzeitarchivierung ist "out of scope".
   In scope ist hingegen die Umsetzung der Empfehlungen, wie die Daten und Metadaten für die Langzeitarchivierung
-  packetiert werden sollen (--> Siehe Resultate des Projektes ellipse des Bundes. Aktuellsten Stand telefonisch nachfragen).
+  packetiert werden sollen.    
+  (--> Siehe Resultate des Projektes ellipse des Bundes. Aktuellsten Stand telefonisch nachfragen).
 * **STAC-API:** Das STAC-API ist ein interessanter Ansatz für die Bereitstellung von Datendateien. Von den für das API
   notwendigen Informationen passt es gut zum Datenbezug, verwendet jedoch beispielsweise das in der Schweiz für "offizielle"
   Geodaten wenig gebräuchliche Koordinatensystem WGS84. Fazit: Out of Scope - in Folgeprojekt umsetzen, falls sich STAC
   als Standard durchsetzt.
-* **Mehrfach download:** Dieser absehbare Kundenwunsch beisst sich leider sehr mit den HTTP / Browser Limitationen.
+* **Mehrfach download:** Dieser absehbare Kundenwunsch beisst sich sehr mit den HTTP / Browser Limitationen.
   --> Leider "out of scope". Abhängig von den Kundenfeedbacks nach mehreren Monaten Betrieb Lösung suchen. Ansätze:
   * https://github.com/sindresorhus/multi-download
   * https://stackoverflow.com/questions/7064998/how-to-make-a-link-open-multiple-pages-when-clicked
-* **Geocat:** Die Geocat-Anbindung wird sinnvollerweise in einem eigenständigen Projekt angegangen. Die sinnvolle
-  Anbindung mittels INTERLIS ist unsere Kernkompetenz. Die dafür notwendigen Komponenten existieren mit GRETL und 
-  ili2pg schon lange. --> Projekt wird in unsere Projekt-Queue aufgenommen. Dieses Projekt würde sich auch hervorragend
+* **Geocat:** Die Geocat-Anbindung wird sinnvollerweise in einem eigenständigen Projekt angegangen. Die Anbindung
+  mittels INTERLIS ist unsere Kernkompetenz. Die dafür notwendigen Komponenten existieren mit GRETL und 
+  ili2pg schon lange.   
+  --> Projekt wird in unsere Projekt-Queue aufgenommen. Dieses Projekt würde sich auch hervorragend
   eignen für die Erarbeitung durch einen Projektleiter ausserhalb des AGI (--> AIO oder Extern).
   
   

@@ -6,6 +6,11 @@
 !includeurl ICONURL/Concepts/documents.puml
 
 package "Meta" {
+
+    [SIMI] as sim
+    () REST as simi
+    sim - simi
+
     database "Meta-DB" {
         [tables] as tbl
     }
@@ -13,6 +18,7 @@ package "Meta" {
     [sql2json] as sj
 
     sj --> tbl
+    sim --> tbl
 }
 
 package "GRETL Gradle Plugin" {
@@ -40,7 +46,7 @@ package "Dateiablage - Gewässerschutz" {
 }
 
 package "Dateiablage - Gewässerschutz" {
-    package "20210114" {
+    package "Hist: 20210114" {
         () . as hist
 
         OFF_DOCUMENT(ili, *.ili)
@@ -57,5 +63,6 @@ sj --> conf
 
 keep --> bez
 keep --> hist
+keep --> simi : PUT updated timestamp
 
 @enduml
