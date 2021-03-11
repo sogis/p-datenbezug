@@ -7,26 +7,33 @@
 !includeurl ICONURL/Concepts/application_generic.puml
 !includeurl ICONURL/Concepts/folders.puml
 
-[Web GIS] as wgc
-
-package Datenbezug{
-    [<$application_generic> Datenbezug] as db
-    OFF_DOCUMENT(cat, catalog.json)
-
-    db -right-> cat
+package Config-Pipeline{
+    [sql2json] as sj
+    [json2ili] as ji
 }
 
+database "Meta-DB" {
+    [tables] as tbl
+}
+
+package Datenbezug{
+    OFF_DOCUMENT(cat, catalog.json)
+}
 
 package "Dateiablage"{
-    [<$folders> HTTPs Directory] as http
     OFF_DOCUMENT(ilicat, ilidata.xtf)
 }
 
-[API - WMS oder WMTS] as wms
+package "GRETL"{
+    OFF_DOCUMENT(conf, conf.json)
+}
 
-wgc --> db : URL open
-db --> http
-db --> wms
+sj --> tbl
+sj --> conf
+sj --> cat
+
+ji--> cat
+ji --> ilicat
 
 
 

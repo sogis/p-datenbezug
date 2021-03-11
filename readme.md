@@ -27,9 +27,10 @@ kantonalen Verwaltung arbeiten, ist nicht relevant und darf keinen Unterschied m
 * **Kurzzeit-Archiv:** Stellt die historischen Stände 5 - 10 Jahre zurück bereit und bietet für die Datenbezüger ähnliche
   Funktionalität wie beim Bezug des aktuellen Datenstandes.
 * **Langzeit-Archiv:** Stellt die historischen Stände über Dekaden sicher. Der Zugriff erfolgt über die Funktionalitäten
-  des digitalen Archivs der Staatskanzlei.
+  des digitalen Archivs des Staatsarchives.
 
 ## Komponentendiagramme
+* [Verteilung der Metainformationen](conf.md)
 * [Neue Komponenten der GRETL Publikations-Jobs](gretl_pub.md)
 * [Komponenten rund um die Webapplikation "Datenbezug"](bezug.md)
 
@@ -43,6 +44,8 @@ kantonalen Verwaltung arbeiten, ist nicht relevant und darf keinen Unterschied m
   und wird als **ein** Datensatz bezogen.
 * **Publikations-Job:** GRETL-Job, mit welchem die Daten eines Themas von einem Editierstand publiziert werden.
 * **GDI-SO:** Geodateninfrastruktur des Kantons Solothurn.
+* **Keeper:** Neue in das Gradle-Plugin GRETL integrierte Komponente, welche die Daten-Dateien für Datenbezug und 
+  Kurzzeit-Archiv generiert.
 
 ## Fragen / Feststellungen bzgl. der Konzeptphase
 
@@ -65,7 +68,8 @@ kantonalen Verwaltung arbeiten, ist nicht relevant und darf keinen Unterschied m
 * Das immer wichtiger werdende Datenthema ist Stand heute in WMS und WGC nicht durchgängig vorhanden. Muss dies in einer
   geeigneten Form nun gemacht werden? Beispielsweise indem immer ein Group- oder Facadelayer existiert, welcher das
   Datenthema repräsentiert?
-* Ist es sinnvoll, den Katalog neben Json auch in INTERLIS-XML Form bereitzustellen? Aufwand / Ertrag?
+* DONE: Ist es sinnvoll, den Katalog neben Json auch in INTERLIS-XML Form bereitzustellen? Aufwand / Ertrag?
+  *  Strategie-Chefentscheid: Wird umgesetzt, auch um den interessanten Ansatz des ilidata.xtf zu unterstützen. 
 * Andere Kantone machen eine grosse Sache von wegen OGD - was machen wir da kommunikativ?
 * Bezüglich Dateiablage (AIO)
   * Zugriffsschutz: Wie wird dieser über alle Kanäle umgesetzt (http / ftp)? Die Informationen dazu sind vorhanden und
@@ -80,6 +84,20 @@ kantonalen Verwaltung arbeiten, ist nicht relevant und darf keinen Unterschied m
 * Wie werden die nur für eine kleine Benutzergruppe interessanten Edit-Daten in der Datenbezug-Webapp angeboten?
 * Eignet sich das "out of the box" REST-API von SIMI für die Aktualisierung mit dem "updated" timestamp, oder 
   muss/soll (mit wenig code) ein spezifischer Endpunkt geschrieben werden?
+* Es müssen insbesondere die "Cornercases" Raster, AV und Nutzungsplanung untersucht werden, damit in der Konzeptphase
+  ein vollständiges Bild entsteht.
+  * Raster: Aufgrund ihres generell anderen Charakters (Datenumfang, Kachelung, .....)
+  * AV (Nutzungsplanung): Vektor Datenthemen mit Originaldaten in n Xtf's
+* Datenbezug-Client: Wie wird UXUI gestaltet, um die Filterung der Datenthemen gemäss "WGC Auswahl" zum Ausdruck zu bringen?
+* Subunits: Wo werden diese wie definiert? In SIMI, als INTERLIS-Modell, ...? 
+* Subunits: Wie werden sie dem Datenbezug-Client verfügbar gemacht, damit er diese anzeigen und selektieren kann? Via catalog.json, WMS, ...?
+* Kommunikation: In welcher Form kann vor allem kantonsintern aufgezeigt werden, dass das AGI einen guten Job macht und die 
+  Geodaten im Kanton Solothurn seit XX Jahren open sind. --> Opengeodata
+* Opengeodata: In diesem Zuge die mini-Anpassung noch machen ("Lizenzvertrag"), damit offene Geodaten == Opendata?
+* Trace: Welche Statistiken sind sinnvoll bezüglich dem Datenbezug und wie kommen wir zu diesen?
+* Ist die Maskierung für die zugriffsgeschützten Attribute eines Interlis-Modelles ein guter Weg, und wie gelangt diese
+  Information zu ili2pg? Parameter des ili2pg Aufrufes, Annotation auf den betroffenen Modellen, ...?
+* Wie gehen wir mit den parallel vorhandenen ili2pg Versionen um? 
   
 ## Entscheide
 
@@ -92,9 +110,9 @@ kantonalen Verwaltung arbeiten, ist nicht relevant und darf keinen Unterschied m
   packetiert werden sollen.    
   (--> Siehe Resultate des Projektes ellipse des Bundes. Aktuellsten Stand telefonisch nachfragen).
 * **STAC-API:** Das STAC-API ist ein interessanter Ansatz für die Bereitstellung von Datendateien. Von den für das API
-  notwendigen Informationen passt es gut zum Datenbezug, verwendet jedoch beispielsweise das in der Schweiz für "offizielle"
-  Geodaten wenig gebräuchliche Koordinatensystem WGS84. Fazit: Out of Scope - in Folgeprojekt umsetzen, falls sich STAC
-  als Standard durchsetzt.
+  notwendigen Informationen passt es gut zum Datenbezug. Zum heutigen Zeitpunkt ist nicht klar, ob sich das STAC API,
+  AtOS (Atom Open Search) oder ein anderer Ansatz durchsetzen wird. Darum: Out of Scope - in Folgeprojekt umsetzen, 
+  falls sich STAC als Standard durchsetzt.
 * **Mehrfach download:** Dieser absehbare Kundenwunsch beisst sich sehr mit den HTTP / Browser Limitationen.
   --> Leider "out of scope". Abhängig von den Kundenfeedbacks nach mehreren Monaten Betrieb Lösung suchen. Ansätze:
   * https://github.com/sindresorhus/multi-download
