@@ -33,6 +33,7 @@ kantonalen Verwaltung arbeiten, ist nicht relevant und darf keinen Unterschied m
 * [Verteilung der Metainformationen](conf.md)
 * [Neue Komponenten der GRETL Publikations-Jobs](gretl_pub.md)
 * [Komponenten rund um die Webapplikation "Datenbezug"](bezug.md)
+* [Access-Management (Bouncer)](bouncer.md)
 
 ## Glossar
 
