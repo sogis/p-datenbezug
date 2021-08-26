@@ -1,14 +1,3 @@
-Inhalt
-
-* Datenstruktur der Ablage
-  * Einfachen Vektorfall
-  * Aufgeteilt
-  * Gemischt (Nutzungsplanung Kantonal / kommun)
-  * Bäume für privaten Bereich des publishers
-* Hauptschritte
-* Anforderungen
-
-
 # Datei- und Ordnerstruktur der Publikation
 
 * ch.so.agi.vermessung/
@@ -42,6 +31,13 @@ Inhalt
     * edit_kantonal -- Kantonsweise ohne Nutzungsformate (Geodaten ausschliesslich als ch.so.agi.vermessung.edit_kantonal.xtf)
   * hist/
     * 2021.06.03/
+* ch.so.agi.lidar_2019
+  * \[aktuell/\]
+    * \[data__dsm_relief/\]
+    * \[data__ndsm_relief/\]
+    * \[data__ndsm_vegetation/\]
+    * \[data__hoehenlinien/\]
+    * ...
 
 
 Fragen / Bemerkungen:
@@ -50,6 +46,8 @@ Fragen / Bemerkungen:
   * Ein Zeitstand enthält alle Gebiete, obwohl viele nicht verändert wurden...
 * Das publishdate.json enthält das Datum des Ausführens des Publikations-Jobs
 * Die in eckigen Klammern notierten Ordner könnten weggelassen werden. Meine Meinung: Belassen. Stören nicht gross, aber helfen beim Verständnis der Ablage-Struktur.
+* Wie legen wir die wiederkehrenden Raster (Ortho / Lidar) ab? Jeder Zeitstand als eigener Datensatz oder als Zeitreihe? Bei Änderung auf Zeitreihe: Aufwand / Ertrag?
+* Bei den Lidars haben wir viele publizierte Produkte von je einem Edukt. Wie in der obigen Ordnerstruktur geschrieben abbilden?
 
 ## Datei- und Ordnerstruktur der Input-Daten (Annahme)
 

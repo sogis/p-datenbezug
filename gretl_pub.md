@@ -41,6 +41,7 @@ Fragen:
   * Sind wir für den Erstrelease auf das Publikationsdatum zwingend angewiesen? Soll dieses in der Webapplikation Datenbezug an prominenter Stelle angezeigt werden?
   * Es gibt keine Datenthemen, in denen wir Geopackage und co bereitstellen, die Datenquelle dafür aber nicht die Pub-DB, sondern ein abgelegtes xtf ist, oder?
   * Die Rasterdaten werden nicht automatisch, sondern manuell nach den gleichen Gesetzmässigkeiten wie die Vektoren abgelegt. Sie sind für den Publisher "out of scope".
+* Wie gehen wir mit den parallel vorhandenen ili2pg Versionen um? 
 
 
 
