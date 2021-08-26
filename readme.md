@@ -45,8 +45,8 @@ kantonalen Verwaltung arbeiten, ist nicht relevant und darf keinen Unterschied m
   und wird als **ein** Datensatz bezogen.
 * **Publikations-Job:** GRETL-Job, mit welchem die Daten eines Themas von einem Editierstand publiziert werden.
 * **GDI-SO:** Geodateninfrastruktur des Kantons Solothurn.
-* **Keeper:** Neue in das Gradle-Plugin GRETL integrierte Komponente, welche die Daten-Dateien für Datenbezug und 
-  Kurzzeit-Archiv generiert.
+* **Publisher:** Neues Gradle-Plugin, welches die Daten-Dateien für Datenbezug und 
+  Kurzzeit-Archiv generiert und pflegt.
 
 ## Fragen / Feststellungen bzgl. der Konzeptphase
 
@@ -55,16 +55,17 @@ kantonalen Verwaltung arbeiten, ist nicht relevant und darf keinen Unterschied m
 * Integrierte Suche vs. Nutzen des Suchservice.
 * Gefühlt sind unsere Beschreibungen noch am falschen Ort / an zu vielen Orten. Fokus liegt im Moment noch stark
   auf der Beschreibung einzelner Tabellen, und nicht auf der Beschreibung des ganzen Themas als "Tabellenverbund".
-* Aspekte des keepers weiter ausdetaillieren, damit dessen interne Struktur von den Entwicklern definiert werden kann.
-* Wieviel Platz kann in den historisierten Ständen durch zippen der xtf gespart werden? Rechnet sich das?
+* Aspekte des Publishers weiter ausdetaillieren, damit dessen interne Struktur von den Entwicklern definiert werden kann.
+* DONE: Wieviel Platz kann in den historisierten Ständen durch zippen der xtf gespart werden? Rechnet sich das?
+  * Bis auf weiteres weglassen, da der benötigte Speicherplatz mit Abstand von den Raster / Lidar dominiert wird.
 * Regeln für die Historisierung und deren Anwendung: 
   * Soll / Muss das Archiv auch ausgedünnt werden? (Sliding Window) etwa:
     * Bis drei Monate zurück: Wochenstände werden bereitgestellt (sofern vorhanden)
     * Drei bis zwölf Monate zurück: Monatsstände werden bereitgestellt
     * Mehr als ein Jahr zurück: Jahresstände werden bereitgestellt
-  * Ist es richtig, dass die Anwendung zum Zeitpunkt der Publikation über den Keeper erfolgt? Alternative: 
+  * Ist es richtig, dass die Anwendung zum Zeitpunkt der Publikation über den Publisher erfolgt? Alternative: 
   Scheduled background Task.
-* Gibt es manuelle Tätigkeiten im Kontext der Datenpublikation und können diese durch die Funktionalitäten des keepers
+* Gibt es manuelle Tätigkeiten im Kontext der Datenpublikation und können diese durch die Funktionalitäten des Publisher
   unterstützt werden? Raster? Lidar?
 * Das immer wichtiger werdende Datenthema ist Stand heute in WMS und WGC nicht durchgängig vorhanden. Muss dies in einer
   geeigneten Form nun gemacht werden? Beispielsweise indem immer ein Group- oder Facadelayer existiert, welcher das
@@ -79,7 +80,8 @@ kantonalen Verwaltung arbeiten, ist nicht relevant und darf keinen Unterschied m
     * Ordner umbenennen?
     * "Virtuelle" Verzeichnisse (Pointer)?
   * Welche Technologie kommt sinnvollerweise für sicheren FTP zum Einsatz? sFTP oder FTPs?
-  * Ueber welches Protokoll kann/soll der keeper die Kopieraktionen in der Dateiablage auslösen? (s)FTP(s)?
+  * DONE: Ueber welches Protokoll kann/soll der Publisher die Kopieraktionen in der Dateiablage auslösen? (s)FTP(s)?
+    * ftps, da sftp und ftps als gleichwertig eingeschätzt werden, nur für ftps vertrausenswürdiges java-lib vorliegt.
 * In welchem Umfang wird das Archiv ebenfalls in die Benutzeroberfläche des Datenbezugs integriert?
 * Welche Parameter übergibt der WGC dem Datenbezug via URL.
 * Wie werden die nur für eine kleine Benutzergruppe interessanten Edit-Daten in der Datenbezug-Webapp angeboten?

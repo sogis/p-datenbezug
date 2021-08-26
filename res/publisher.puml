@@ -1,0 +1,48 @@
+@startuml
+
+!include <tupadr3/common>
+!define ICONURL https://raw.githubusercontent.com/Roemer/plantuml-office/master/office2014
+!includeurl ICONURL/Concepts/document.puml
+!includeurl ICONURL/Concepts/documents.puml
+
+
+package "Datenquellen des Themas"{
+    database "Edit GeoDB" {
+        [ili2pg - Schema] as rel
+    }
+    database "Pub GeoDB" {
+        [ili2pg - Schema] as flat
+    }
+    folder "Edit-Geodaten" {
+        OFF_DOCUMENT(input_xtf, *.xtf)
+    }
+}
+
+package "GRADLE - Build" {
+    [publisher] as pub
+}
+
+package "Publiziertes Thema"{
+    package "data" {
+        OFF_DOCUMENT(xtf, *.xtf)
+        OFF_DOCUMENT(gp, *.gpkg)
+        OFF_DOCUMENTS(shp, *_shp.zip)
+        OFF_DOCUMENTS(dxf, *_dxf.zip)
+    }
+    package "edit" {
+        OFF_DOCUMENT(edit_xtf, *.xtf)
+    }
+}
+
+rel --> pub
+flat --> pub
+input_xtf --> pub
+
+pub --> edit_xtf
+pub --> xtf
+pub --> gp
+pub --> shp
+pub --> dxf
+
+
+@enduml
