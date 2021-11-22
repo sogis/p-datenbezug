@@ -1,0 +1,73 @@
+@startuml
+
+!include <tupadr3/common>
+!define ICONURL https://raw.githubusercontent.com/Roemer/plantuml-office/master/office2014
+!includeurl ICONURL/Concepts/document.puml
+!includeurl ICONURL/Concepts/documents.puml
+
+
+package "Datenquellen"{
+    database "GeoDB" {
+        [ili2pg - Schema] as db
+    }
+    folder "INTERLIS Daten" {
+        OFF_DOCUMENT(tf, "*.xtf, *.itf")
+    }
+}
+
+package "SIMI"{
+    
+    [SIMI] as simi
+    () rest as "HTTPS PUT"
+    rest - simi
+    
+    database "Meta-DB" {
+        [Meta-Tables] as mdb
+    }
+    [sql2json] as sj
+    
+    sj -up-> mdb
+    simi --> mdb
+}
+
+[GDI WMTS] as wm
+
+
+package "Datenbezug"{
+    package "Publisher (GRETL)" {
+        [Publisher] as pub
+        OFF_DOCUMENT(pconf, config.json)
+    }
+    
+    package "Datenablage"{
+        OFF_DOCUMENTS(data, Daten-Dateien)
+    }
+    
+    package "Datensuche" {
+        [Datensuche] as ds
+        OFF_DOCUMENT(bconf, config.json)
+    }
+    
+    pub --> data : sftp (schreibend)
+}
+
+package "Generische Clients"{
+    [Browser] as httpc
+    [FTP-Client] as ftpc
+    
+    httpc -[hidden]-> ftpc
+}
+
+pub -up-> db : db con
+pub -up-> tf : filesys read
+pub -up-> rest : ?basic auth?
+
+httpc --> data : https
+ftpc  -left-> data : ftp (lesend)
+
+sj --> pconf : ?filesys write?
+sj --> bconf : filesys write
+
+ds ---> wm : Hintergrundkarte
+
+@enduml

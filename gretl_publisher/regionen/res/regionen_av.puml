@@ -1,0 +1,40 @@
+@startuml
+
+!include <tupadr3/common>
+!define ICONURL https://raw.githubusercontent.com/Roemer/plantuml-office/master/office2014
+!includeurl ICONURL/Concepts/document.puml
+!includeurl ICONURL/Concepts/folder.puml
+!includeurl ICONURL/Databases/database_partition_5.puml
+
+
+database "Publikations-Geodaten" as pub{
+    package "ili2pg - Schema AV" as schema {
+        OFF_DATABASE_PARTITION_5(ds2401, DS 2401)
+        OFF_DATABASE_PARTITION_5(ds2406, DS 2406)
+    }
+}
+
+package "/tmp/pending/ch.so.agi.av" as pending {
+    OFF_DOCUMENT(2401, 2401.itf)
+    OFF_DOCUMENT(2406, 2406.itf)
+}
+
+package "/tmp/stage/ch.so.agi.av" as stage {
+    OFF_FOLDER(stage_edit, ./edit)
+    OFF_FOLDER(stage_data, ./data)
+}
+
+package "sftp://data/ch.so.agi.av/aktuell" as aktuell {
+    OFF_FOLDER(akt_edit, ./edit)
+    OFF_FOLDER(akt_data, ./data)
+    
+    akt_edit -[hidden]right-> akt_data
+}
+
+pending -[hidden]right-> pub
+
+aktuell -up-> stage : "1. Kopie erstellen"
+pending --> stage_edit : "2. Originale aktualisieren"
+schema --> stage_data : "3. Produkte aktualisieren"
+
+@enduml
