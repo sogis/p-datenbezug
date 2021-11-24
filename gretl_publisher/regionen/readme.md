@@ -30,7 +30,7 @@ Resultierende Ablage (todo verschieben in entsprechendes *.md):
   * 2402.itf.zip
   * ...
 * /stage/data: 
-  * ./2401: $td Ordner erwünscht?
+  * **./2401:** $td Ordner erwünscht?
     * **2401.itf.zip (dm01 CH)**
     * 2401.xtf.zip (mopublic)
     * **2401.dxf.zip**
@@ -44,6 +44,7 @@ Resultierende Ablage (todo verschieben in entsprechendes *.md):
 Fragen:
 * Fett dargestellt
   * Die Nachführungsgeometer liefern dm01 SO, nicht CH?
+  * Aufteilung nach Nachführungseinheit notwendig (Unterordner)?
   * Abgrenzung Edit / Pub bzgl dm01 CH?
   * AV sowohl in generischem dxf wie spezifischem (geobau)?
 

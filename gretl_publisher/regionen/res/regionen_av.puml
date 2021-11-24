@@ -19,12 +19,12 @@ package "/tmp/pending/ch.so.agi.av" as pending {
     OFF_DOCUMENT(2406, 2406.itf)
 }
 
-package "/tmp/stage/ch.so.agi.av" as stage {
+package "stage/ch.so.agi.av" as stage {
     OFF_FOLDER(stage_edit, ./edit)
     OFF_FOLDER(stage_data, ./data)
 }
 
-package "sftp://data/ch.so.agi.av/aktuell" as aktuell {
+package "data/ch.so.agi.av/aktuell" as aktuell {
     OFF_FOLDER(akt_edit, ./edit)
     OFF_FOLDER(akt_data, ./data)
     
