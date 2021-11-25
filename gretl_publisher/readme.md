@@ -61,5 +61,5 @@ In der AV sind neben den Modellen DM01-SO und "Mo-Public" auch DM01-CH zu berüc
 
 ## Links
 
-* [Regionen](./regionen) zum Umgang mit Regionen
-* [Ablagestruktur](../ablage_struktur) zum Aufbau der Ablage
+* [Regionen](regionen/readme.md) zum Umgang mit Regionen
+* [Ablagestruktur](../ablage_struktur/readme.md) zum Aufbau der Ablage

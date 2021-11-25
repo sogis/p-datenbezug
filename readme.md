@@ -1,5 +1,4 @@
 # Datenbezug
-Verantwortlicher: [Vorname] [Name]
 
 Umfasst die Komponenten und Schnittstellen, mit welchen die öffentlichen Geodaten dateibasiert bereitgestellt werden.
 
@@ -63,8 +62,8 @@ Für die Verkehrszählstellen umfasst der Nachführungsprozess "nur" ein Datenth
 
 ## Links
 
-* [Datei- und Ordnerstruktur der Ablage](./ablage_struktur)
-* [Webapplikation Datensuche](./datensuche)
-* [Publisher-Task (GRETL)](./gretl_publisher)
+* [Datei- und Ordnerstruktur der Ablage](ablage_struktur/readme.md)
+* [Webapplikation Datensuche](datensuche/readme.md)
+* [Publisher-Task (GRETL)](gretl_publisher/readme.md)
 
 
