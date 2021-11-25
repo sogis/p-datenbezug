@@ -7,7 +7,9 @@ Wie auf der Seite [Publisher-Task (GRETL)](../) beschrieben, wird typischerweise
 
 ## Publikation am Beispiel der AV-Daten von Egerkingen und Oberbuchsiten
 
-In der AV werden die BFS-Nummern als Identifier der Regionen genutzt. Die Identifier sind Teil der Dateinamen der Ablage (Namenskonvention).
+In der AV werden die BFS-Nummern als Identifier der Regionen genutzt. Die Identifier sind Teil der Dateinamen der Ablage.
+
+Namenskonvention der Transferdateien im Pending-Ordner: \[Regionen-Identifier\].*tf (Suffix xtf oder itf)
 
 ![Regionen AV](res/regionen_av.png)
 
@@ -38,12 +40,6 @@ Ein Publisher ermittelt durch das Auslesen der Regionen-Liste, ob er im Job der 
 ### Links
 
 Siehe Kapitel "Abbildung von Regionen-Einteilungen" in [Datei- und Ordnerstruktur der Ablage](../../ablage_struktur) bezüglich des Aufbaus der Ablage.
-
-
-
-Protokoll übersicht fragen publisher
-- dm01_ch
-- umwandlung publishdat.json in metainf.json, ergänzung mit Array der aktualisierten Regionen
 
 
 

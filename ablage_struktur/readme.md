@@ -4,6 +4,8 @@
 
 Publikation in den beiden Datenbereitstelungen ch.so.avt.verkehrszaehlstellen und ch.so.avt.verkehrszaehlstellen.edit
 
+Namenskonvention für die Dateien: \[Datenbereitstellungs-Identifier\].\[Format-Identifier\].zip
+
 > data/
 > * ch.so.avt.verkehrszaehlstellen/
 >    * aktuell/
