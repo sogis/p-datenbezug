@@ -1,48 +1,45 @@
 @startuml
-
 !include <tupadr3/common>
 !define ICONURL https://raw.githubusercontent.com/Roemer/plantuml-office/master/office2014
 !includeurl ICONURL/Concepts/document.puml
 !includeurl ICONURL/Concepts/documents.puml
 
 
-package "Datenquellen des Themas"{
-    database "Edit GeoDB" {
-        [ili2pg - Schema] as rel
+package "Datenquelle des Themas"{
+    database "GeoDB" {
+        [ili2pg - Schema] as db
     }
-    database "Pub GeoDB" {
-        [ili2pg - Schema] as flat
+
+    folder "Lokaler Ordner" {
+        OFF_DOCUMENT(input_tf, *.xtf / *.itf)
     }
-    folder "Edit-Geodaten" {
-        OFF_DOCUMENT(input_xtf, *.xtf)
-    }
+    
+    db --> input_tf : "Preprocessing, falls Quelle = DB"
 }
 
 package "GRADLE - Build" {
     [publisher] as pub
 }
 
-package "Publiziertes Thema"{
-    package "data" {
-        OFF_DOCUMENT(xtf, *.xtf)
-        OFF_DOCUMENT(gp, *.gpkg)
-        OFF_DOCUMENTS(shp, *_shp.zip)
-        OFF_DOCUMENTS(dxf, *_dxf.zip)
-    }
-    package "edit" {
-        OFF_DOCUMENT(edit_xtf, *.xtf)
+folder "Publiziertes Thema, Ordner /aktuell" as aktuell{
+    OFF_DOCUMENT(tf, *.xtf.zip / *.itf.zip)
+    
+    package "Falls aus Pub-Modell zusätzlich:"{
+        OFF_DOCUMENT(gp, *.gpkg.zip)
+        OFF_DOCUMENTS(shp, *.shp.zip)
+        OFF_DOCUMENTS(dxf, *.dxf.zip)
+
+        gp -[hidden]right-> shp
+        shp -[hidden]right-> dxf
     }
 }
 
-rel --> pub
-flat --> pub
-input_xtf --> pub
+input_tf --> pub
+pub --> aktuell
 
-pub --> edit_xtf
-pub --> xtf
-pub --> gp
-pub --> shp
-pub --> dxf
-
-
+legend
+    Nicht abgebildet:
+    - Umgang mit Regionen (Bei AV: Gemeindeeinteilung)
+    - Archiv / Archivierung
+end legend
 @enduml

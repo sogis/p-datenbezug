@@ -1,56 +1,49 @@
-# Nachführungseinheiten
+# Regionen-Publikation verteilt über mehrere Publisher-Task Aufrufe
 
-Folgende Beispiele erläutern Fälle mit mehreren Nachführungseinheiten innerhalb des Kantons Solothurn.
+Wie auf der Seite [Publisher-Task (GRETL)](../) beschrieben, wird typischerweise pro GRETL-Job der Publisher-Task mehrfach aufgerufen. Auf dieser Seite wird erläutert:
 
-## Publikation der AV-Daten von Egerkingen und Oberbuchsiten
+* Wie der erstausgeführte Publisher das Set der zu bearbeitenden Regionen ermittelt.
+* Wie nachfolgend aufgerufene Publisher dieses Set für andere Datenbereitstellungen abarbeiten.
 
-In der AV werden die BFS-Nummern als Identifier der Nachführungseinheiten genutzt. Die Identifier sind Teil der Datei- und Ordnernamen der Ablage.
+## Publikation am Beispiel der AV-Daten von Egerkingen und Oberbuchsiten
 
-![Nachführungseinheiten AV](res/regionen_av.png)
+In der AV werden die BFS-Nummern als Identifier der Regionen genutzt. Die Identifier sind Teil der Dateinamen der Ablage (Namenskonvention).
+
+![Regionen AV](res/regionen_av.png)
 
 ### Publikationsschritte
 
-* Vorgelagerte Schritte des Publikations-Job (Nicht abgebildet):
-  * Ablage der zu aktualisierenden AV-Daten pro Gemeinde mit Namensgebung gemäss Konvention (BFS-Nr 2401, 2406 für Egerkingen, Oberbuchsiten).
-  * Ableitung und Aktualisierung der Produkte in der Publikations-DB.
-* Bereitstellung Zeitstand in Stage-Ordner durch Publisher-Task:
-  1. 1:1 Kopie des aktuell publizierten AV-Datenstandes erstellen.
-  2. Original Transferdateien Prüfen und in Staging ersetzen.
-  3. Produkte pro Nachführungseinheit aktualisieren:     
-    * Mittels ili2pg die Daten der betroffenen ili dataset (DS) aus DB exportieren.
-    * Exportierte Transferdatei prüfen.
-    * Nutzerformate ableiten und ablegen.
-* Nachgelagerte Schritte des Publisher-Task (Nicht abgebildet):
-  * Neuen Zeitstand mittels sftp publizieren.
-  * Archiv ausdünnen.
+* Pub 1 (erstausgeführter Publisher):
+  * Aus den Dateinamen der Dateien im Ordner "pending" die Liste der zu verarbeitenden Regionen ableiten.
+  * Liste in Job-Variable speichern.
+  * Daten für ch.so.agi.av.dm01_so bereitstellen.
+* Pub 2 (von Job folgend aufgerufener Publisher):
+  * Regionen-Liste aus Job-Variable auslesen.
+  * Transferdateien aus der Datenbank exportieren und bereitstellen (ch.so.agi.av.mopublic)
+    * Voraussetzung: Das ili2pg-Schema wurde mit den korrekten ILI-Datasets angelegt (2401, 2406, ...)
 
-Resultierende Ablage (todo verschieben in entsprechendes *.md):
-* /stage/edit: **(Jeweils dm01 SO)**
-  * 2401.itf.zip
-  * 2402.itf.zip
-  * ...
-* /stage/data: 
-  * **./2401:** $td Ordner erwünscht?
-    * **2401.itf.zip (dm01 CH)**
-    * 2401.xtf.zip (mopublic)
-    * **2401.dxf.zip**
-    * **2401.dxf_geobau.zip**
-    * 2401.shp.zip
-    * 2401.gpkg.zip
+Nach Pub 2 können beliebig viele weitere Publikations-Tasks folgen. Falls diese eine Datenbereitstellung mit Regionen behandeln, lesen sie wiederum die Regionen-Liste aus.
+Für Pub 2 und alle folgenden ist die Regionen-Liste massgebend. Falls diesen in der Verarbeitung Dateien oder in der DB Datasets fehlen, brechen sie die Verarbeitung ab.
 
-  * ./2402:
-    * ...
+**Detailliertes Sequenzdiagramm der Schritte:**
 
-Fragen:
-* Fett dargestellt
-  * Die Nachführungsgeometer liefern dm01 SO, nicht CH?
-  * Aufteilung nach Nachführungseinheit notwendig (Unterordner)?
-  * Abgrenzung Edit / Pub bzgl dm01 CH?
-  * AV sowohl in generischem dxf wie spezifischem (geobau)?
+![Sequenzdiagramm Regionen](res/sequenz.png)
+
+Ein Publisher ermittelt durch das Auslesen der Regionen-Liste, ob er im Job der Erste ist:
+
+* Regionen-Liste nicht vorhanden --> Erstausgeführter Publisher. Ermittelt Liste aus "pending" Ordner
+* Regionen-Liste vorhanden --> Folgender Publisher. Arbeitet die vorhandene Regionen-Liste ab.
+
+
+### Links
+
+Siehe Kapitel "Abbildung von Regionen-Einteilungen" in [Datei- und Ordnerstruktur der Ablage](../../ablage_struktur) bezüglich des Aufbaus der Ablage.
 
 
 
-
+Protokoll übersicht fragen publisher
+- dm01_ch
+- umwandlung publishdat.json in metainf.json, ergänzung mit Array der aktualisierten Regionen
 
 
 

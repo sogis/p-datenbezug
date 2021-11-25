@@ -24,7 +24,10 @@ package "SIMI"{
     database "Meta-DB" {
         [Meta-Tables] as mdb
     }
-    [sql2json] as sj
+    
+    package "Pipeline" as pipe {
+        [sql2json] as sj
+    }
     
     sj -up-> mdb
     simi --> mdb
@@ -65,14 +68,14 @@ package "Datenadministration"{
 
 pub -up-> db : db con
 pub -up-> tf : filesys read
-pub -up-> rest : ?basic auth?
+pub -up-> rest : OAuth2
 
 httpc --> data : https
 ftpc  -left-> data : ftp (lesend)
 ftpadmin  -up-> data : sftp (schreibend)
 
-sj --> pconf : ?filesys write?
-sj --> bconf : filesys write
+pipe --> pconf : ?filesys write?
+pipe --> bconf : filesys write
 
 ds ---> wm : Hintergrundkarte
 

@@ -1,0 +1,35 @@
+@startuml
+
+participant Job as j
+participant "Pub 1" as p1
+collections "Job-Mem" as jmem
+collections "Pending" as pend
+collections "Staging" as s
+participant "Pub 2" as p2
+database "Db" as db
+
+j -> p1 ++ : start
+    p1 --> jmem : read
+    p1 --> pend : read
+    p1 --> jmem : write
+    p1 --> s : write
+return success
+
+j -> p2 ++ : start
+    p2 --> jmem : read
+    p2 --> db : read
+    p2 --> s : write
+return success
+
+legend
+    |= Prozess |= Beschreibung |
+    | Job | GRETL-Job |
+    | Pub 1 | Erstaufgerufener Publisher-Task |
+    | Job-Mem | Job-Memory - Variable "Regionen-Liste" |
+    | Pending | Ordner mit den zu verarbeitenden Transferdateien |
+    | Staging | Zielordner der lokalen Verarbeitung des Publisher |
+    | Pub 2 | Folgend aufgerufener Publisher-Task |
+    | Db | Datenbank mit ili2pg-Schema (mit ILI-Datasets) |
+end legend
+
+@enduml
