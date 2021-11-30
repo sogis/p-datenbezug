@@ -18,3 +18,4 @@
 |Raster Zeitreihen|Alle ausser Publisher|ch.so.agi.orthofoto mit Ordner /aktuell und /hist oder ch.so.agi.orthofoto_2019?||
 |DXF für die AV|Alle|AV sowohl in generischem dxf wie spezifischem (geobau)?||
 |Datenbereitstellung Teil des Dateinamens||---|---|
+|Bereitstellung TOML|Publisher|TOML bei Daten (=zip) oder Metadaten (=/meta/*) bereitstellen?|---|
