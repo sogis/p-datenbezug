@@ -1,0 +1,37 @@
+@startuml
+
+!include <tupadr3/common>
+!define ICONURL https://raw.githubusercontent.com/Roemer/plantuml-office/master/office2014
+!includeurl ICONURL/Concepts/documents.puml
+!includeurl ICONURL/Concepts/application_web.puml
+!includeurl ICONURL/Concepts/application_generic.puml
+!includeurl ICONURL/Concepts/folders.puml
+
+[<$application_web> Datensuche] as db
+[<$folders> HTTPs Directory] as http
+[<$folders> (s)FTP Directory] as ftp
+
+http -[hidden]-> ftp
+
+db --> http : uses
+
+:Anwender: as u
+:Experte: as p
+:Maschine: as m
+
+usecase "Suchen: Daten suchen und\nbeziehen" as search
+usecase "Laden: Bekannte Daten\n(erneut) beziehen" as load
+
+search -[hidden]-> load
+
+
+u --> search
+p -right-> search
+p --> load
+m -right-> load
+
+search -> db
+load -> http
+load -> ftp
+
+@enduml
