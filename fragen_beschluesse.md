@@ -21,3 +21,4 @@
 |Art des Verweises auf externe Bezugsquellen|Datensuche|GDI: Verweis auf alle publizierten öffentlichen Datenprodukte im WMS (DSV, FL, LG), jeweils mit Link auf dem WGC. Geodienste: Verweis auf die Landing-Page.|16.12.2021|
 |Welche Teile der Config sind ENV?|Datensuche|Beispielsweise die Hostnamen für WMS, WGC, Datenablage|16.12.2021|
 |Pendente Datenthemen|Datensuche|Werden nicht gelistet. In zeitnahe Umsetzung der Datenthemen investieren.|16.12.2021|
+|Löschen der Gebrauchsformate|Publisher|In /hist sind ausschliesslich die Transferdateien enthalten --> Bei Kopieren in /hist die Gebrauchsformate löschen.|16.12.2021|
