@@ -33,13 +33,18 @@ package "SIMI"{
     simi --> mdb
 }
 
-[GDI WMTS] as wm
+[GDI WMTS] as wmts
+
+package "Links" as link {
+    [GDI WMS] as wms
+    [GDI WGC] as wgc
+    [geodienste] as ai
+}
 
 
 package "Datenbezug"{
     package "Publisher (GRETL)" {
         [Publisher] as pub
-        OFF_DOCUMENT(pconf, config.json)
     }
     
     package "Datenablage"{
@@ -48,7 +53,8 @@ package "Datenbezug"{
     
     package "Datensuche" {
         [Datensuche] as ds
-        OFF_DOCUMENT(bconf, config.json)
+        OFF_DOCUMENT(bconf, config.yaml)
+        OFF_DOCUMENTS(regions, [regions].geojson)
     }
     
     pub --> data : sftp (schreibend)
@@ -74,9 +80,10 @@ httpc --> data : https
 ftpc  -left-> data : ftp (lesend)
 ftpadmin  -up-> data : sftp (schreibend)
 
-pipe --> pconf : ?filesys write?
 pipe --> bconf : filesys write
+pipe --> regions : filesys write
 
-ds ---> wm : Hintergrundkarte
+ds ---> wmts : Hintergrundkarte
+ds ---> link : Themen-Links
 
 @enduml
