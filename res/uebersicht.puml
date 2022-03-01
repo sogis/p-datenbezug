@@ -25,12 +25,20 @@ package "SIMI"{
         [Meta-Tables] as mdb
     }
     
-    package "Pipeline" as pipe {
+    package "Nightly-Job. GRETL?" as nightly {
         [sql2json] as sj
+        [GM03-Exporter] as mex
     }
     
     sj -up-> mdb
     simi --> mdb
+    
+    mex -up-> mdb
+    mex .up.> simi : POJO
+    note on link
+      Nur falls direkt auf
+      POJO zugegriffen wird.
+    end note
 }
 
 [GDI WMTS] as wmts
@@ -43,6 +51,13 @@ package "Links" as link {
 
 
 package "Datenbezug"{
+
+		package "Portale (opendata, geocat)" {
+			OFF_DOCUMENT(gm03, gm03.xtf)
+			[geocat] as gc
+			[opendata.swiss] as od
+		}
+
     package "Publisher (GRETL)" {
         [Publisher] as pub
     }
@@ -54,11 +69,15 @@ package "Datenbezug"{
     package "Datensuche" {
         [Datensuche] as ds
         OFF_DOCUMENT(bconf, config.yaml)
-        OFF_DOCUMENTS(regions, [regions].geojson)
+        OFF_DOCUMENTS(regions, regions.json)
     }
     
     pub --> data : sftp (schreibend)
     ds --> data : https
+    note on link
+      - Daten-Zips
+      - detailbeschreibung.html
+    end note
 }
 
 package "Generische Clients"{
@@ -80,8 +99,18 @@ httpc --> data : https
 ftpc  -left-> data : ftp (lesend)
 ftpadmin  -up-> data : sftp (schreibend)
 
-pipe --> bconf : filesys write
-pipe --> regions : filesys write
+sj --> bconf : filesys write
+sj --> regions : filesys write
+note on link
+  regions.json ist ein keyval json.
+  -key: region layer identifier
+  -val: layer als geojson
+end note
+
+mex --> gm03
+
+od --> ds
+gc --> ds
 
 ds ---> wmts : Hintergrundkarte
 ds ---> link : Themen-Links
