@@ -21,8 +21,16 @@ package "SIMI"{
     () rest as "HTTPS GET / PUT"
     rest - simi
     
-    database "Meta-DB" {
-        [Meta-Tables] as mdb
+    database "Meta-DB" as mdb {
+        [Meta-Tables] as mtbl
+        [Meta-Views] as mv
+        note right of mv
+        **theme_v:** Datenbereitstellung
+        **themeitem_v:** Tabelle, Geotif, ...
+        **attribute_v:** Attributeigenschaften
+        end note
+        
+        mv --> mtbl
     }
     
     package "Nightly-Job. GRETL?" as nightly {
@@ -30,10 +38,10 @@ package "SIMI"{
         [GM03-Exporter] as mex
     }
     
-    sj -up-> mdb
+    sj -up-> mv
     simi --> mdb
     
-    mex -up-> mdb
+    mex -up-> mv
     mex .up.> simi : POJO
     note on link
       Nur falls direkt auf
