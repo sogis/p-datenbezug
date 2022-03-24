@@ -18,8 +18,10 @@ package "Datenquellen"{
 package "SIMI"{
     
     [SIMI] as simi
-    () rest as "HTTPS GET / PUT"
-    rest - simi
+    () papi as "Für Publisher"
+    () sapi as "Für Datensuche"
+    papi - simi
+    sapi - simi
     
     database "Meta-DB" as mdb {
         [Meta-Tables] as mtbl
@@ -34,11 +36,9 @@ package "SIMI"{
     }
     
     package "Nightly-Job. GRETL?" as nightly {
-        [sql2json] as sj
         [GM03-Exporter] as mex
     }
     
-    sj -up-> mv
     simi --> mdb
     
     mex -up-> mv
@@ -101,14 +101,13 @@ package "Datenadministration"{
 
 pub -up-> db : db con
 pub -up-> tf : filesys read
-pub -up-> rest : OAuth2
+pub -up-> papi : OAuth2
 
 httpc --> data : https
 ftpc  -left-> data : ftp (lesend)
 ftpadmin  -up-> data : sftp (schreibend)
 
-sj --> bconf : filesys write
-sj --> regions : filesys write
+
 note on link
   regions.json ist ein keyval json.
   -key: region layer identifier
@@ -122,5 +121,7 @@ gc --> ds
 
 ds ---> wmts : Hintergrundkarte
 ds ---> link : Themen-Links
+
+ds -up-> sapi : Auth?
 
 @enduml
