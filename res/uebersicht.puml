@@ -1,3 +1,4 @@
+
 @startuml
 
 !include <tupadr3/common>
@@ -20,7 +21,7 @@ package "SIMI"{
     [SIMI] as simi
     () papi as "Für Publisher"
     () sapi as "Für Datensuche"
-    papi - simi
+    simi - papi
     sapi - simi
     
     database "Meta-DB" as mdb {
@@ -35,18 +36,22 @@ package "SIMI"{
         mv --> mtbl
     }
     
-    package "Nightly-Job. GRETL?" as nightly {
+    package "Jobs" as nightly {
         [GM03-Exporter] as mex
+        [CURL] as rex
+        
+        note right of rex
+          "CURL-Job" macht am Schluss reboot
+          des Containers "Datensuche"
+        end note
     }
+
+
     
     simi --> mdb
     
-    mex -up-> mv
-    mex .up.> simi : POJO
-    note on link
-      Nur falls direkt auf
-      POJO zugegriffen wird.
-    end note
+    mex --up-> mv
+    rex --up-> sapi : Auth?
 }
 
 [GDI WMTS] as wmts
@@ -115,13 +120,12 @@ note on link
 end note
 
 mex --> gm03
+rex --> bconf
 
 od --> ds
 gc --> ds
 
 ds ---> wmts : Hintergrundkarte
 ds ---> link : Themen-Links
-
-ds -up-> sapi : Auth?
 
 @enduml
