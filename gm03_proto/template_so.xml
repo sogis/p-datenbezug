@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TRANSFER xmlns="http://www.interlis.ch/INTERLIS2.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <HEADERSECTION SENDER="geocat.ch" VERSION="2.3">
+    <MODELS />
+  </HEADERSECTION>
+  <DATASECTION>
+    <GM03_2_1Comprehensive.Comprehensive BID="xw13721235a">
+      <GM03_2_1Core.Core.MD_Metadata TID="xN2074104447">
+        <fileIdentifier>d7970146-1740-4ee3-8c1d-2cbfd19f9a70</fileIdentifier>
+        <language>de</language>
+        <characterSet>utf8</characterSet>
+        <dateStamp>2021-12-06</dateStamp>
+        <metadataStandardName>GM03-GL</metadataStandardName>
+        <hierarchyLevel>
+          <GM03_2_1Core.Core.MD_ScopeCode_>
+            <value>dataset</value>
+          </GM03_2_1Core.Core.MD_ScopeCode_>
+        </hierarchyLevel>
+        <dataSetURI>https://geo.gl.ch</dataSetURI>
+        <distributionInfo REF="xN1338974446" />
+      </GM03_2_1Core.Core.MD_Metadata>
+      <GM03_2_1Core.Core.MD_Distribution TID="xN1338974446" />
+      <GM03_2_1Core.Core.MD_DistributiondistributionFormat>
+        <MD_Distribution REF="xN1338974446" />
+        <distributionFormat REF="xN974872598" />
+      </GM03_2_1Core.Core.MD_DistributiondistributionFormat>
+      <GM03_2_1Comprehensive.Comprehensive.MD_Format TID="xN974872598">
+        <name>ZIP-File</name>
+        <version>-</version>
+      </GM03_2_1Comprehensive.Comprehensive.MD_Format>
+      <GM03_2_1Comprehensive.Comprehensive.MD_DigitalTransferOptions TID="xN1641022202">
+        <MD_Distribution REF="xN1338974446" />
+      </GM03_2_1Comprehensive.Comprehensive.MD_DigitalTransferOptions>
+      <GM03_2_1Core.Core.CI_OnlineResource TID="xN1338434386">
+        <!-- ?? Was angeben für shp, geopackage, dxf, unterscheidung itf / xtf? -->
+        <protocol>WWW:DOWNLOAD:INTERLIS</protocol>
+        <function>download</function>
+        <name>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>$$const.files["xtf"].name (INTERLIS-Transferdatei (in Zip) )</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </name>
+        <linkage>
+          <GM03_2_1Core.Core.PT_FreeURL>
+            <URLGroup>
+              <GM03_2_1Core.Core.PT_URLGroup>
+                <language>de</language>
+                <!-- $$const.filesBaseUrl,themepublication.identifier -->
+                <plainURL>https://files.geo.so.ch</plainURL>
+              </GM03_2_1Core.Core.PT_URLGroup>
+<!--               <GM03_2_1Core.Core.PT_URLGroup>
+                <language>de</language>
+                <plainURL>https://map.geo.gl.ch/data/pgs.zip</plainURL>
+              </GM03_2_1Core.Core.PT_URLGroup> -->
+            </URLGroup>
+          </GM03_2_1Core.Core.PT_FreeURL>
+        </linkage>
+        <MD_DigitalTransferOptions REF="xN1641022202" />
+      </GM03_2_1Core.Core.CI_OnlineResource>
+      <GM03_2_1Core.Core.CI_OnlineResource TID="xN1642658116">
+        <protocol>WWW:LINK</protocol>
+        <function>information</function>
+        <name>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>$$Link auf Thema im Geoportal des Kt. Solothurn</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </name>
+        <linkage>
+          <GM03_2_1Core.Core.PT_FreeURL>
+            <URLGroup>
+              <GM03_2_1Core.Core.PT_URLGroup>
+                <language>de</language>
+                <!-- $$const.searchBaseUrl, themepublication.identifier -->
+                <plainURL>https://data.geo.so.ch</plainURL>
+              </GM03_2_1Core.Core.PT_URLGroup>
+<!--               <GM03_2_1Core.Core.PT_URLGroup>
+                <language>de</language>
+                <plainURL>http://www.geo.gl.ch/</plainURL>
+              </GM03_2_1Core.Core.PT_URLGroup> -->
+            </URLGroup>
+          </GM03_2_1Core.Core.PT_FreeURL>
+        </linkage>
+        <MD_DigitalTransferOptions REF="xN1641022202" />
+      </GM03_2_1Core.Core.CI_OnlineResource>
+      <GM03_2_1Core.Core.CI_OnlineResource TID="xN557136427">
+        <protocol>OGC:WMS</protocol>
+        <description>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Folgende Layer stehen zur Verfügung: ch.gl.inlandwaters.gszonen,ch.gl.inlandwaters.gsbereich,ch.gl.inlandwaters.gsareal</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </description>
+        <name>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>WMS-Dienst des Kt. Solothurn</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </name>
+        <linkage>
+          <GM03_2_1Core.Core.PT_FreeURL>
+            <URLGroup>
+              <GM03_2_1Core.Core.PT_URLGroup>
+                <language>de</language>
+                <plainURL>https://wms.geo.gl.ch?Service=WMS&amp;Request=GetCapabilities&amp;Version=1.3.0</plainURL>
+              </GM03_2_1Core.Core.PT_URLGroup>
+<!--               <GM03_2_1Core.Core.PT_URLGroup>
+                <language>de</language>
+                <plainURL>https://wms.geo.gl.ch?Service=WMS&amp;Request=GetCapabilities&amp;Version=1.3.0</plainURL>
+              </GM03_2_1Core.Core.PT_URLGroup> -->
+            </URLGroup>
+          </GM03_2_1Core.Core.PT_FreeURL>
+        </linkage>
+        <MD_DigitalTransferOptions REF="xN1641022202" />
+      </GM03_2_1Core.Core.CI_OnlineResource>
+      <GM03_2_1Core.Core.CI_OnlineResource TID="xN893014114">
+        <protocol>OGC:WFS</protocol>
+        <description>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Folgende Layer stehen zur Verfügung: ch.gl.inlandwaters.gszonen,ch.gl.inlandwaters.gsbereich,ch.gl.inlandwaters.gsareal</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </description>
+        <name>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>WFS-Dienst Kanton Glarus</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </name>
+        <linkage>
+          <GM03_2_1Core.Core.PT_FreeURL>
+            <URLGroup>
+              <GM03_2_1Core.Core.PT_URLGroup>
+                <language>de</language>
+                <plainURL>https://wfs.geo.gl.ch?Service=WFS&amp;Request=GetCapabilities&amp;Version=1.1.0</plainURL>
+              </GM03_2_1Core.Core.PT_URLGroup>
+              <GM03_2_1Core.Core.PT_URLGroup>
+                <language>de</language>
+                <plainURL>https://wfs.geo.gl.ch?Service=WFS&amp;Request=GetCapabilities&amp;Version=1.1.0</plainURL>
+              </GM03_2_1Core.Core.PT_URLGroup>
+            </URLGroup>
+          </GM03_2_1Core.Core.PT_FreeURL>
+        </linkage>
+        <MD_DigitalTransferOptions REF="xN1641022202" />
+      </GM03_2_1Core.Core.CI_OnlineResource>
+      <GM03_2_1Core.Core.MD_Metadatacontact>
+        <contact REF="921f00a6-5d6b-4213-be0f-65eee7acb303" />
+        <MD_Metadata REF="xN2074104447" />
+        <role>
+          <GM03_2_1Core.Core.CI_RoleCode_>
+            <value>distributor</value>
+          </GM03_2_1Core.Core.CI_RoleCode_>
+        </role>
+      </GM03_2_1Core.Core.MD_Metadatacontact>
+      <GM03_2_1Core.Core.CI_ResponsibleParty TID="921f00a6-5d6b-4213-be0f-65eee7acb303">
+        <electronicalMailAddress>
+          <GM03_2_1Core.Core.URL_>
+            <value>mailto:agi@so.ch</value>
+          </GM03_2_1Core.Core.URL_>
+        </electronicalMailAddress>
+        <organisationName>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Amt für Geoinformation (AGI)</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </organisationName>        
+        <linkage>
+          <GM03_2_1Core.Core.PT_FreeURL>
+            <URLGroup>
+              <GM03_2_1Core.Core.PT_URLGroup>
+                <language>de</language>
+                <plainURL>https://so.ch/verwaltung/bau-und-justizdepartement/amt-fuer-geoinformation/</plainURL>
+              </GM03_2_1Core.Core.PT_URLGroup>
+            </URLGroup>
+          </GM03_2_1Core.Core.PT_FreeURL>
+        </linkage>
+        <address REF="6e46e914-3ab8-4c32-876c-2f6e57a5c3ea" />
+        <!-- <contactInfo REF="xN1311225693" /> -->
+      </GM03_2_1Core.Core.CI_ResponsibleParty>
+      <GM03_2_1Core.Core.CI_Address TID="6e46e914-3ab8-4c32-876c-2f6e57a5c3ea">
+        <postalCode>4500</postalCode>
+        <city>Solothurn</city>
+        <country>CH</country>
+      </GM03_2_1Core.Core.CI_Address>
+      <GM03_2_1Core.Core.CI_Telephone TID="a0b61ab6-818b-4c50-b77b-c84496257f8a">
+        <number>032 627 75 92</number>
+        <numberType>mainNumber</numberType>
+        <CI_ResponsibleParty REF="921f00a6-5d6b-4213-be0f-65eee7acb303" />
+      </GM03_2_1Core.Core.CI_Telephone>
+
+
+
+      <GM03_2_1Core.Core.MD_Metadatacontact>
+        <contact REF="xN1564836589" />
+        <MD_Metadata REF="xN2074104447" />
+        <role>
+          <GM03_2_1Core.Core.CI_RoleCode_>
+            <value>owner</value>
+          </GM03_2_1Core.Core.CI_RoleCode_>
+        </role>
+      </GM03_2_1Core.Core.MD_Metadatacontact>
+      <GM03_2_1Core.Core.CI_ResponsibleParty TID="xN1564836589">
+<!--         <individualFirstName>Olivier</individualFirstName>
+        <individualLastName>Scheurer</individualLastName> -->
+        <electronicalMailAddress>
+          <GM03_2_1Core.Core.URL_>
+            <!-- $$theme.contact.email -->
+            <value>mailto:afu@so.ch</value>
+          </GM03_2_1Core.Core.URL_>
+        </electronicalMailAddress>
+        <organisationName>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>$$theme.contact.orgname (Amt für Umwelt (AfU))</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </organisationName>
+
+<!--         <organisationAcronym>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>en</language>
+                <plainText>A-UE</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>A-UE</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>fr</language>
+                <plainText>A-UE</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>it</language>
+                <plainText>A-UE</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>rm</language>
+                <plainText>A-UE</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </organisationAcronym> -->
+        
+        <linkage>
+          <GM03_2_1Core.Core.PT_FreeURL>
+            <URLGroup>
+              <GM03_2_1Core.Core.PT_URLGroup>
+                <language>de</language>
+                <!-- $$theme.contact.url -->
+                <plainURL>https://so.ch/verwaltung/bau-und-justizdepartement/amt-fuer-umwelt/</plainURL>
+              </GM03_2_1Core.Core.PT_URLGroup>
+            </URLGroup>
+          </GM03_2_1Core.Core.PT_FreeURL>
+        </linkage>
+        <address REF="xN811480654" />
+        <contactInfo REF="xN1311225693" />
+      </GM03_2_1Core.Core.CI_ResponsibleParty>
+      <GM03_2_1Core.Core.CI_Address TID="xN811480654">
+        <postalCode>4500</postalCode>
+        <city>Solothurn</city>
+        <country>CH</country>
+      </GM03_2_1Core.Core.CI_Address>
+      <GM03_2_1Core.Core.CI_Contact TID="xN1311225693" />
+      <GM03_2_1Core.Core.CI_Telephone TID="a6cb7b0b-025b-4e2e-bb54-5f012f508c09">
+        <!-- $$theme.contact.telefone -->
+        <number>032 627 75 92</number>
+        <numberType>mainNumber</numberType>
+        <CI_ResponsibleParty REF="xN1564836589" />
+      </GM03_2_1Core.Core.CI_Telephone>
+      <GM03_2_1Comprehensive.Comprehensive.MD_VectorSpatialRepresentation xmlns:gml320="http://www.opengis.net/gml" TID="xN493289705">
+        <MD_Metadata REF="xN2074104447" />
+      </GM03_2_1Comprehensive.Comprehensive.MD_VectorSpatialRepresentation>
+      <GM03_2_1Comprehensive.Comprehensive.MD_GeometricObjects TID="xN1572751980">
+        <geometricObjectType>surface</geometricObjectType><!--surface, point, curve-->
+        <MD_VectorSpatialRepresentation REF="xN493289705" />
+      </GM03_2_1Comprehensive.Comprehensive.MD_GeometricObjects>
+      <GM03_2_1Comprehensive.Comprehensive.MD_DataIdentification TID="xN1935750059">
+        <status>
+          <GM03_2_1Core.Core.MD_ProgressCode_>
+            <value>onGoing</value>
+          </GM03_2_1Core.Core.MD_ProgressCode_>
+        </status>
+        <abstract>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Planerischer Gewässerschutz: Gewässerschutzbereiche, Grundwasserschutzareale, Grundwasserschutzzonen. Teil des ÖREB-Katasters. Gewässerschutzbereiche, Grundwasserschutzareale sowie provisorische/geplante Grundwasserschutzzonen liegen in der Zuständigkeit des Kantons; rechtskräftige Grundwasserschutzzonen werden von den Gemeinden ausgeschieden und vom Kanton genehmigt.</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </abstract>
+        <MD_Metadata REF="xN2074104447" />
+        <citation REF="xN2133258067" />
+<!--         <spatialRepresentationType>
+          <GM03_2_1Core.Core.MD_SpatialRepresentationTypeCode_>
+            <value />
+          </GM03_2_1Core.Core.MD_SpatialRepresentationTypeCode_>
+        </spatialRepresentationType> -->
+        <language>
+          <CodeISO.LanguageCodeISO_>
+            <value>de</value>
+          </CodeISO.LanguageCodeISO_>
+        </language>
+        <characterSet>
+          <GM03_2_1Core.Core.MD_CharacterSetCode_>
+            <value>utf8</value>
+          </GM03_2_1Core.Core.MD_CharacterSetCode_>
+        </characterSet>
+<!--         <topicCategory>
+          <GM03_2_1Core.Core.MD_TopicCategoryCode_>
+            <value>inlandWaters</value>
+          </GM03_2_1Core.Core.MD_TopicCategoryCode_>
+        </topicCategory> -->
+        <environmentDescription>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Datensatz:</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </environmentDescription>
+        <supplementalInformation>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Projekt:</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </supplementalInformation>
+      </GM03_2_1Comprehensive.Comprehensive.MD_DataIdentification>
+      <GM03_2_1Comprehensive.Comprehensive.CI_Citation TID="xN2133258067">
+        <title>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Planerischer Gewässerschutz</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </title>
+        <collectiveTitle>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Planerischer Gewässerschutz</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </collectiveTitle>
+      </GM03_2_1Comprehensive.Comprehensive.CI_Citation>
+      <GM03_2_1Core.Core.CI_Date TID="xw13721235aac29b1b1b1b3b1">
+        <date>2021-01-11</date>
+        <dateType>creation</dateType>
+        <CI_Citation REF="xN2133258067" />
+      </GM03_2_1Core.Core.CI_Date>
+      <GM03_2_1Core.Core.CI_Date TID="xw13721235aac29b1b1b1b5b1">
+        <date>2021-01-11</date>
+        <dateType>creation</dateType>
+        <CI_Citation REF="xN2133258067" />
+      </GM03_2_1Core.Core.CI_Date>
+      <GM03_2_1Core.Core.MD_IdentificationpointOfContact>
+        <pointOfContact REF="xN1675703055" />
+        <MD_Identification REF="xN1935750059" />
+        <role>
+          <GM03_2_1Core.Core.CI_RoleCode_>
+            <value>processor</value>
+          </GM03_2_1Core.Core.CI_RoleCode_>
+        </role>
+      </GM03_2_1Core.Core.MD_IdentificationpointOfContact>
+      <GM03_2_1Core.Core.CI_ResponsibleParty TID="xN1675703055">
+        <electronicalMailAddress>
+          <GM03_2_1Core.Core.URL_>
+            <value>mailto:olivier.scheurer@gl.ch</value>
+          </GM03_2_1Core.Core.URL_>
+        </electronicalMailAddress>
+        <organisationName>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Abteilung Umweltschutz und Energie (DBU)</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </organisationName>
+        <address REF="xN721044946" />
+        <contactInfo REF="xN1465410282" />
+      </GM03_2_1Core.Core.CI_ResponsibleParty>
+      <GM03_2_1Core.Core.CI_Address TID="xN721044946">
+        <streetName>Kirchstrasse</streetName>
+        <streetNumber>2</streetNumber>
+        <postalCode>8750</postalCode>
+        <city>Glarus</city>
+        <country>CH</country>
+      </GM03_2_1Core.Core.CI_Address>
+      <GM03_2_1Core.Core.CI_Contact TID="xN1465410282" />
+      <GM03_2_1Core.Core.MD_IdentificationpointOfContact>
+        <pointOfContact REF="xN1733973" />
+        <MD_Identification REF="xN1935750059" />
+        <role>
+          <GM03_2_1Core.Core.CI_RoleCode_>
+            <value>owner</value>
+          </GM03_2_1Core.Core.CI_RoleCode_>
+        </role>
+      </GM03_2_1Core.Core.MD_IdentificationpointOfContact>
+      <GM03_2_1Core.Core.CI_ResponsibleParty TID="xN1733973">
+        <individualLastName>Olivier Scheurer</individualLastName>
+        <organisationName>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Abteilung Umweltschutz und Energie (DBU)</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </organisationName>
+        <organisationAcronym>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>A-UE</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </organisationAcronym>
+        <address REF="xN1034318501" />
+        <contactInfo REF="xN646706671" />
+      </GM03_2_1Core.Core.CI_ResponsibleParty>
+      <GM03_2_1Core.Core.CI_Address TID="xN1034318501" />
+      <GM03_2_1Core.Core.CI_Contact TID="xN646706671" />
+      <GM03_2_1Comprehensive.Comprehensive.MD_MaintenanceInformation TID="xN1092995161">
+        <maintenanceAndUpdateFrequency>continual</maintenanceAndUpdateFrequency>
+        <MD_Identification REF="xN1935750059" />
+      </GM03_2_1Comprehensive.Comprehensive.MD_MaintenanceInformation>
+      <GM03_2_1Comprehensive.Comprehensive.resourceFormatMD_Identification>
+        <resourceFormat REF="xN974872598" />
+        <MD_Identification REF="xN1935750059" />
+      </GM03_2_1Comprehensive.Comprehensive.resourceFormatMD_Identification>
+      <GM03_2_1Core.Core.descriptiveKeywordsMD_Identification>
+        <descriptiveKeywords REF="xN1737693777" />
+        <MD_Identification REF="xN1935750059" />
+      </GM03_2_1Core.Core.descriptiveKeywordsMD_Identification>
+      <GM03_2_1Core.Core.MD_Keywords TID="xN1737693777">
+        <keyword>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>$$theme.keywords[0]</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>$$theme.keywords[1]</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </keyword>
+      </GM03_2_1Core.Core.MD_Keywords>
+      <GM03_2_1Comprehensive.Comprehensive.resourceConstraintsMD_Identification>
+        <resourceConstraints REF="xN107824142" />
+        <MD_Identification REF="xN1935750059" />
+      </GM03_2_1Comprehensive.Comprehensive.resourceConstraintsMD_Identification>
+      <GM03_2_1Comprehensive.Comprehensive.MD_Constraints TID="xN107824142">
+        <useLimitation>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>$$A: öffentlich zugängliche Geodaten</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </useLimitation>
+      </GM03_2_1Comprehensive.Comprehensive.MD_Constraints>
+
+<!--       <GM03_2_1Comprehensive.Comprehensive.resourceConstraintsMD_Identification>
+        <resourceConstraints REF="xN257851989" />
+        <MD_Identification REF="xN1935750059" />
+      </GM03_2_1Comprehensive.Comprehensive.resourceConstraintsMD_Identification>
+      <GM03_2_1Comprehensive.Comprehensive.MD_LegalConstraints TID="xN257851989">
+        <useLimitation>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>OpenData:OPEN</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </useLimitation>
+        <useConstraints>
+          <GM03_2_1Comprehensive.Comprehensive.MD_RestrictionCode_>
+            <value>license</value>
+          </GM03_2_1Comprehensive.Comprehensive.MD_RestrictionCode_>
+        </useConstraints>
+      </GM03_2_1Comprehensive.Comprehensive.MD_LegalConstraints> -->
+
+      <GM03_2_1Comprehensive.Comprehensive.resourceConstraintsMD_Identification>
+        <resourceConstraints REF="xN344017066" />
+        <MD_Identification REF="xN1935750059" />
+      </GM03_2_1Comprehensive.Comprehensive.resourceConstraintsMD_Identification>
+      <GM03_2_1Comprehensive.Comprehensive.MD_LegalConstraints TID="xN344017066">
+        <useConstraints>
+          <GM03_2_1Comprehensive.Comprehensive.MD_RestrictionCode_>
+            <value>license</value>
+          </GM03_2_1Comprehensive.Comprehensive.MD_RestrictionCode_>
+        </useConstraints>
+        <otherConstraints>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>$$const.opendata.disclaimer (Sie dürfen diesen Datensatz ohne jegliche Einschränkungen nutzen. Eine Quellenangabe wird empfohlen (Autor, Titel und Link zum Datensatz)</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </otherConstraints>
+      </GM03_2_1Comprehensive.Comprehensive.MD_LegalConstraints>
+      <GM03_2_1Core.Core.MD_Resolution TID="xN72464209">
+        <MD_DataIdentification REF="xN1935750059" />
+        <!-- <equivalentScale REF="xN844682807" /> -->
+      </GM03_2_1Core.Core.MD_Resolution>
+<!--       <GM03_2_1Core.Core.MD_RepresentativeFraction TID="xN844682807">
+        <denominator />
+      </GM03_2_1Core.Core.MD_RepresentativeFraction> -->
+      <GM03_2_1Core.Core.EX_Extent TID="xN2053173244">
+        <description>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Kanton Glarus (GL)</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </description>
+        <MD_DataIdentification REF="xN1935750059" />
+      </GM03_2_1Core.Core.EX_Extent>
+      <GM03_2_1Core.Core.EX_ExtentgeographicElement>
+        <EX_Extent REF="xN2053173244" />
+        <geographicElement REF="xN2012626986" />
+      </GM03_2_1Core.Core.EX_ExtentgeographicElement>
+      <GM03_2_1Core.Core.EX_GeographicDescription TID="xN2012626986">
+        <geographicIdentifier REF="xN1395807639" />
+      </GM03_2_1Core.Core.EX_GeographicDescription>
+      <GM03_2_1Core.Core.MD_Identifier TID="xN1395807639">
+        <code>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>AK</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </code>
+      </GM03_2_1Core.Core.MD_Identifier>
+      <GM03_2_1Core.Core.EX_ExtentgeographicElement>
+        <EX_Extent REF="xN2053173244" />
+        <geographicElement REF="xN554954249" />
+      </GM03_2_1Core.Core.EX_ExtentgeographicElement>
+
+      <GM03_2_1Core.Core.EX_GeographicBoundingBox TID="xN554954249">
+        <extentTypeCode>true</extentTypeCode>
+        <northBoundLatitude>47.17025507432738</northBoundLatitude>
+        <southBoundLatitude>46.80556672040718</southBoundLatitude>
+        <eastBoundLongitude>9.25582924068951</eastBoundLongitude>
+        <westBoundLongitude>8.870227029608891</westBoundLongitude>
+      </GM03_2_1Core.Core.EX_GeographicBoundingBox>
+
+<!--       <GM03_2_1Core.Core.EX_BoundingPolygon TID="xN554954249">
+        <extentTypeCode>true</extentTypeCode>
+        <polygon>
+          <SURFACE>
+            <BOUNDARY>
+              <POLYLINE>
+                <COORD>
+                  <C1>8.870227029608891</C1>
+                  <C2>46.80556672040718</C2>
+                </COORD>
+                <COORD>
+                  <C1>9.25582924068951</C1>
+                  <C2>46.80556672040718</C2>
+                </COORD>
+                <COORD>
+                  <C1>9.25582924068951</C1>
+                  <C2>47.17025507432738</C2>
+                </COORD>
+                <COORD>
+                  <C1>8.870227029608891</C1>
+                  <C2>47.17025507432738</C2>
+                </COORD>
+                <COORD>
+                  <C1>8.870227029608891</C1>
+                  <C2>46.80556672040718</C2>
+                </COORD>
+              </POLYLINE>
+            </BOUNDARY>
+          </SURFACE>
+        </polygon>
+      </GM03_2_1Core.Core.EX_BoundingPolygon> -->
+
+      <GM03_2_1Core.Core.EX_ExtentgeographicElement>
+        <EX_Extent REF="xN2053173244" />
+        <geographicElement REF="xN1261347769" />
+      </GM03_2_1Core.Core.EX_ExtentgeographicElement>
+      <GM03_2_1Core.Core.EX_GeographicBoundingBox TID="xN1261347769">
+        <extentTypeCode>true</extentTypeCode>
+        <northBoundLatitude>47.17025507432738</northBoundLatitude>
+        <southBoundLatitude>46.80556672040718</southBoundLatitude>
+        <eastBoundLongitude>9.25582924068951</eastBoundLongitude>
+        <westBoundLongitude>8.870227029608891</westBoundLongitude>
+      </GM03_2_1Core.Core.EX_GeographicBoundingBox>
+      <GM03_2_1Core.Core.EX_ExtentgeographicElement>
+        <EX_Extent REF="xN2053173244" />
+        <geographicElement REF="xN1805189445" />
+      </GM03_2_1Core.Core.EX_ExtentgeographicElement>
+      <GM03_2_1Core.Core.EX_GeographicDescription TID="xN1805189445">
+        <geographicIdentifier REF="xN415983728" />
+      </GM03_2_1Core.Core.EX_GeographicDescription>
+      <GM03_2_1Core.Core.MD_Identifier TID="xN415983728">
+        <code>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Glarus</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </code>
+      </GM03_2_1Core.Core.MD_Identifier>
+      <GM03_2_1Comprehensive.Comprehensive.MD_FeatureCatalogueDescription xmlns:gml320="http://www.opengis.net/gml" TID="xN1256541297">
+        <MD_Metadata REF="xN2074104447" />
+        <includedWithDataset>false</includedWithDataset>
+        <modelType>FeatureDescription</modelType>
+      </GM03_2_1Comprehensive.Comprehensive.MD_FeatureCatalogueDescription>
+      <GM03_2_1Comprehensive.Comprehensive.classMD_FeatureCatalogueDescription>
+        <class REF="xN1252248149" />
+        <MD_FeatureCatalogueDescription REF="xN1256541297" />
+      </GM03_2_1Comprehensive.Comprehensive.classMD_FeatureCatalogueDescription>
+      <GM03_2_1Comprehensive.Comprehensive.MD_Class TID="xN1252248149">
+        <name>Planerischer Gewässerschutz</name>
+      </GM03_2_1Comprehensive.Comprehensive.MD_Class>
+      <GM03_2_1Comprehensive.Comprehensive.CI_Citation TID="xN1352936891">
+        <title>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Planerischer Gewässerschutz</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </title>
+        <MD_FeatureCatalogueDescription REF="xN1256541297" />
+      </GM03_2_1Comprehensive.Comprehensive.CI_Citation>
+      <GM03_2_1Core.Core.CI_Date TID="xw13721235aac31b1b3b1b3b1">
+        <date>2021-12-06</date>
+        <dateType>revision</dateType>
+        <CI_Citation REF="xN1352936891" />
+      </GM03_2_1Core.Core.CI_Date>
+
+<!--       <GM03_2_1Core.Core.DQ_DataQuality xmlns:gml320="http://www.opengis.net/gml" TID="xN804808251">
+        <MD_Metadata REF="xN2074104447" />
+      </GM03_2_1Core.Core.DQ_DataQuality>
+      <GM03_2_1Core.Core.DQ_Scope TID="xN1929399101">
+        <level>dataset</level>
+        <DQ_DataQuality REF="xN804808251" />
+      </GM03_2_1Core.Core.DQ_Scope>
+      <GM03_2_1Core.Core.LI_Lineage TID="xN1462700852">
+        <statement>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText />
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </statement>
+        <DQ_DataQuality REF="xN804808251" />
+      </GM03_2_1Core.Core.LI_Lineage> 
+      <GM03_2_1Comprehensive.Comprehensive.sourceLI_Lineage>
+        <source REF="x2w13721235aac35b1b3b1b3b1" />
+        <LI_Lineage REF="xN1462700852" />
+      </GM03_2_1Comprehensive.Comprehensive.sourceLI_Lineage>
+      <GM03_2_1Comprehensive.Comprehensive.LI_Source TID="x2w13721235aac35b1b3b1b3b1">
+        <description>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText />
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </description>
+      </GM03_2_1Comprehensive.Comprehensive.LI_Source>
+      <GM03_2_1Comprehensive.Comprehensive.MD_MaintenanceInformation TID="xN896664423">
+        <maintenanceAndUpdateFrequency>continual</maintenanceAndUpdateFrequency>
+        <MD_Metadata REF="xN2074104447" />
+      </GM03_2_1Comprehensive.Comprehensive.MD_MaintenanceInformation>
+          -->
+    </GM03_2_1Comprehensive.Comprehensive>
+  </DATASECTION>
+</TRANSFER>
+

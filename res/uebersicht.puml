@@ -35,23 +35,20 @@ package "SIMI"{
         
         mv --> mtbl
     }
-    
-    package "Jobs" as nightly {
-        [GM03-Exporter] as mex
-        [CURL] as rex
+
+        [GM03-Exporter (GRETL)] as mex
+        [Pipeline (CURL)] as rex
         
         note right of rex
-          "CURL-Job" macht am Schluss reboot
-          des Containers "Datensuche"
+          "CURL-Pipeline" deployt am Schluss
+          das neu konfigurierte Image
         end note
-    }
-
 
     
     simi --> mdb
     
     mex --up-> mv
-    rex --up-> sapi : Auth?
+    rex ---up-> sapi : Auth?
 }
 
 [GDI WMTS] as wmts
