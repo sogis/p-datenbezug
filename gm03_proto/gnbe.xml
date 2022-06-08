@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TRANSFER xmlns="http://www.interlis.ch/INTERLIS2.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <HEADERSECTION SENDER="geocat.ch" VERSION="2.3">
+    <MODELS />
+  </HEADERSECTION>
+  <DATASECTION>
+    <GM03_2_1Comprehensive.Comprehensive BID="xw3345544a">
+      <GM03_2_1Core.Core.MD_Metadata TID="xN199479561">
+        <fileIdentifier>4f328594-b3bc-407b-ba69-086ea0a4e01f</fileIdentifier>
+        <language>de</language>
+        <characterSet>utf8</characterSet>
+        <dateStamp>2022-05-03T12:13:34</dateStamp>
+        <metadataStandardName>GM03 2+</metadataStandardName>
+        <hierarchyLevel>
+          <GM03_2_1Core.Core.MD_ScopeCode_>
+            <value>dataset</value>
+          </GM03_2_1Core.Core.MD_ScopeCode_>
+        </hierarchyLevel>
+        <hierarchyLevelName>
+          <GM03_2_1Core.Core.CharacterString_>
+            <value>Geoprodukt - Géoproduit</value>
+          </GM03_2_1Core.Core.CharacterString_>
+        </hierarchyLevelName>
+        <distributionInfo REF="xN637176635" />
+      </GM03_2_1Core.Core.MD_Metadata>
+      <GM03_2_1Core.Core.MD_Distribution TID="xN637176635" />
+      <GM03_2_1Core.Core.MD_DistributiondistributionFormat>
+        <MD_Distribution REF="xN637176635" />
+        <distributionFormat REF="xN1710002249" />
+      </GM03_2_1Core.Core.MD_DistributiondistributionFormat>
+      <GM03_2_1Comprehensive.Comprehensive.MD_Format TID="xN1710002249">
+        <name>ZIP</name>
+      </GM03_2_1Comprehensive.Comprehensive.MD_Format>
+      <GM03_2_1Comprehensive.Comprehensive.MD_DigitalTransferOptions TID="xN519637904">
+        <MD_Distribution REF="xN637176635" />
+      </GM03_2_1Comprehensive.Comprehensive.MD_DigitalTransferOptions>
+      <GM03_2_1Core.Core.CI_OnlineResource TID="xN1450276653">
+        <protocol>WWW:DOWNLOAD-1.0-http--download</protocol>
+        <function>information</function>
+        <description>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Link zum Daten-Download (Zip)</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>fr</language>
+                <plainText>Lien vers le téléchargement de données (Zip)</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </description>
+        <linkage>
+          <GM03_2_1Core.Core.PT_FreeURL>
+            <URLGroup>
+              <GM03_2_1Core.Core.PT_URLGroup>
+                <language>de</language>
+                <plainURL>https://geofiles.be.ch/geoportal/pub/download/GNBE/GNBE.zip</plainURL>
+              </GM03_2_1Core.Core.PT_URLGroup>
+              <GM03_2_1Core.Core.PT_URLGroup>
+                <language>fr</language>
+                <plainURL>https://geofiles.be.ch/geoportal/pub/download/GNBE/GNBE.zip</plainURL>
+              </GM03_2_1Core.Core.PT_URLGroup>
+            </URLGroup>
+          </GM03_2_1Core.Core.PT_FreeURL>
+        </linkage>
+        <MD_DigitalTransferOptions REF="xN519637904" />
+      </GM03_2_1Core.Core.CI_OnlineResource>
+      <GM03_2_1Core.Core.CI_OnlineResource TID="xN1641783193">
+        <protocol>WWW:LINK-1.0-http--link</protocol>
+        <function>information</function>
+        <description>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Link zum Geoportal des Kantons Bern</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>fr</language>
+                <plainText>Lien vers le Géoportail du canton de Berne</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </description>
+        <linkage>
+          <GM03_2_1Core.Core.PT_FreeURL>
+            <URLGroup>
+              <GM03_2_1Core.Core.PT_URLGroup>
+                <language>de</language>
+                <plainURL>https://www.geo.apps.be.ch/de/geodaten/suche-nach-geodaten/listing?type=geoproduct&amp;code=GNBE</plainURL>
+              </GM03_2_1Core.Core.PT_URLGroup>
+              <GM03_2_1Core.Core.PT_URLGroup>
+                <language>fr</language>
+                <plainURL>https://www.geo.apps.be.ch/fr/geodonnees/recherche-de-geodonnees/listing?type=geoproduct&amp;code=GNBE</plainURL>
+              </GM03_2_1Core.Core.PT_URLGroup>
+            </URLGroup>
+          </GM03_2_1Core.Core.PT_FreeURL>
+        </linkage>
+        <MD_DigitalTransferOptions REF="xN519637904" />
+      </GM03_2_1Core.Core.CI_OnlineResource>
+      <GM03_2_1Core.Core.MD_Metadatacontact>
+        <contact REF="xN41194271" />
+        <MD_Metadata REF="xN199479561" />
+        <role>
+          <GM03_2_1Core.Core.CI_RoleCode_>
+            <value>pointOfContact</value>
+          </GM03_2_1Core.Core.CI_RoleCode_>
+        </role>
+      </GM03_2_1Core.Core.MD_Metadatacontact>
+      <GM03_2_1Core.Core.CI_ResponsibleParty TID="xN41194271">
+        <individualFirstName>Pascal</individualFirstName>
+        <individualLastName>Kuhn</individualLastName>
+        <electronicalMailAddress>
+          <GM03_2_1Core.Core.URL_>
+            <value>pascal.kuhn@be.ch</value>
+          </GM03_2_1Core.Core.URL_>
+        </electronicalMailAddress>
+        <organisationName>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Amt für Geoinformation - Geobasisdaten</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </organisationName>
+        <linkage>
+          <GM03_2_1Core.Core.PT_FreeURL>
+            <URLGroup>
+              <GM03_2_1Core.Core.PT_URLGroup>
+                <language>de</language>
+                <plainURL>http://www.be.ch/agi</plainURL>
+              </GM03_2_1Core.Core.PT_URLGroup>
+              <GM03_2_1Core.Core.PT_URLGroup>
+                <language>de</language>
+                <plainURL>http://www.be.ch/agi</plainURL>
+              </GM03_2_1Core.Core.PT_URLGroup>
+              <GM03_2_1Core.Core.PT_URLGroup>
+                <language>fr</language>
+                <plainURL>http://www.be.ch/agi</plainURL>
+              </GM03_2_1Core.Core.PT_URLGroup>
+            </URLGroup>
+          </GM03_2_1Core.Core.PT_FreeURL>
+        </linkage>
+        <address REF="xN1494670301" />
+        <contactInfo REF="xN1527525356" />
+      </GM03_2_1Core.Core.CI_ResponsibleParty>
+      <GM03_2_1Core.Core.CI_Address TID="xN1494670301">
+        <streetName>Reiterstrasse 11</streetName>
+        <postalCode>3013</postalCode>
+        <city>Bern</city>
+      </GM03_2_1Core.Core.CI_Address>
+      <GM03_2_1Core.Core.CI_Contact TID="xN1527525356" />
+      <GM03_2_1Core.Core.CI_Telephone TID="xN1205515006">
+        <number>+41 31 633 33 11</number>
+        <numberType>mainNumber</numberType>
+        <CI_ResponsibleParty REF="xN41194271" />
+      </GM03_2_1Core.Core.CI_Telephone>
+      <GM03_2_1Core.Core.referenceSystemInfoMD_Metadata>
+        <referenceSystemInfo REF="xw3345544aac23b1" />
+        <MD_Metadata REF="xN199479561" />
+      </GM03_2_1Core.Core.referenceSystemInfoMD_Metadata>
+      <GM03_2_1Core.Core.MD_ReferenceSystem TID="xw3345544aac23b1">
+        <referenceSystemIdentifier REF="xw3345544aac23b1b1b1" />
+      </GM03_2_1Core.Core.MD_ReferenceSystem>
+      <GM03_2_1Comprehensive.Comprehensive.RS_Identifier TID="xw3345544aac23b1b1b1">
+        <code>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>EPSG:2056</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>fr</language>
+                <plainText>EPSG:2056</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </code>
+        <codeSpace>CH1903+ / LV95 -- Swiss CH1903+ / LV95</codeSpace>
+      </GM03_2_1Comprehensive.Comprehensive.RS_Identifier>
+      <GM03_2_1Comprehensive.Comprehensive.MD_DataIdentification TID="xN174557046">
+        <status>
+          <GM03_2_1Core.Core.MD_ProgressCode_>
+            <value>onGoing</value>
+          </GM03_2_1Core.Core.MD_ProgressCode_>
+        </status>
+        <abstract>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Das Gewässernetz des Kantons Bern GNBE enthält die Gewässerachsen von Flüssen, Bächen und Seen des Kantons Bern und besteht aus an den Endpunkten verbundenen Gewässerabschnitten. Gewässerabschnitte werden pro Gewässer zu einem Hauptlauf und abhängig der Situation zu Nebenläufe zusammengefasst.</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>fr</language>
+                <plainText>Le réseau hydrographique du canton de Berne GNBE comprend les lignes des cours d'eau et des lacs du canton de Berne, et est constitué par des tronçons de cours d'eau reliés entre eux. Les tronçons retracent pour chaque cours d'eau son cours principal, ainsi que ses éventuels cours secondaires.</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </abstract>
+        <MD_Metadata REF="xN199479561" />
+        <citation REF="xN1916465113" />
+        <language>
+          <CodeISO.LanguageCodeISO_>
+            <value>de</value>
+          </CodeISO.LanguageCodeISO_>
+          <CodeISO.LanguageCodeISO_>
+            <value>fr</value>
+          </CodeISO.LanguageCodeISO_>
+        </language>
+        <characterSet>
+          <GM03_2_1Core.Core.MD_CharacterSetCode_>
+            <value>utf8</value>
+          </GM03_2_1Core.Core.MD_CharacterSetCode_>
+        </characterSet>
+        <topicCategory>
+          <GM03_2_1Core.Core.MD_TopicCategoryCode_>
+            <value>inlandWaters</value>
+          </GM03_2_1Core.Core.MD_TopicCategoryCode_>
+        </topicCategory>
+        <basicGeodataID>35-BE</basicGeodataID>
+        <basicGeodataIDType>cantonal</basicGeodataIDType>
+      </GM03_2_1Comprehensive.Comprehensive.MD_DataIdentification>
+      <GM03_2_1Comprehensive.Comprehensive.CI_Citation TID="xN1916465113">
+        <title>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Gewässernetz des Kantons Bern</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>fr</language>
+                <plainText>Réseau hydrographique du canton de Berne</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </title>
+      </GM03_2_1Comprehensive.Comprehensive.CI_Citation>
+      <GM03_2_1Core.Core.CI_Date TID="xw3345544aac25b1b1b1b3b1">
+        <date>2016-03-31</date>
+        <dateType>creation</dateType>
+        <CI_Citation REF="xN1916465113" />
+      </GM03_2_1Core.Core.CI_Date>
+      <GM03_2_1Core.Core.CI_Date TID="xw3345544aac25b1b1b1b5b1">
+        <date>2021-12-31</date>
+        <dateType>revision</dateType>
+        <CI_Citation REF="xN1916465113" />
+      </GM03_2_1Core.Core.CI_Date>
+      <GM03_2_1Core.Core.CI_Date TID="xw3345544aac25b1b1b1b7b1">
+        <date>2022-03-10</date>
+        <dateType>publication</dateType>
+        <CI_Citation REF="xN1916465113" />
+      </GM03_2_1Core.Core.CI_Date>
+      <GM03_2_1Core.Core.MD_IdentificationpointOfContact>
+        <pointOfContact REF="xN1676169726" />
+        <MD_Identification REF="xN174557046" />
+        <role>
+          <GM03_2_1Core.Core.CI_RoleCode_>
+            <value>owner</value>
+          </GM03_2_1Core.Core.CI_RoleCode_>
+        </role>
+      </GM03_2_1Core.Core.MD_IdentificationpointOfContact>
+      <GM03_2_1Core.Core.CI_ResponsibleParty TID="xN1676169726">
+        <electronicalMailAddress>
+          <GM03_2_1Core.Core.URL_>
+            <value>info.tba@be.ch</value>
+          </GM03_2_1Core.Core.URL_>
+        </electronicalMailAddress>
+        <organisationName>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Tiefbauamt - Dienstleistungszentrum</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </organisationName>
+        <address REF="xN1644869318" />
+        <contactInfo REF="xN278909548" />
+      </GM03_2_1Core.Core.CI_ResponsibleParty>
+      <GM03_2_1Core.Core.CI_Address TID="xN1644869318">
+        <streetName>Reiterstrasse 11</streetName>
+        <postalCode>3013</postalCode>
+        <city>Bern</city>
+        <country>None</country>
+      </GM03_2_1Core.Core.CI_Address>
+      <GM03_2_1Core.Core.CI_Contact TID="xN278909548" />
+      <GM03_2_1Core.Core.CI_Telephone TID="xN888159213">
+        <number>+41 31 633 35 11</number>
+        <numberType>mainNumber</numberType>
+        <CI_ResponsibleParty REF="xN1676169726" />
+      </GM03_2_1Core.Core.CI_Telephone>
+      <GM03_2_1Core.Core.MD_IdentificationpointOfContact>
+        <pointOfContact REF="xN1305243371" />
+        <MD_Identification REF="xN174557046" />
+        <role>
+          <GM03_2_1Core.Core.CI_RoleCode_>
+            <value>principalInvestigator</value>
+          </GM03_2_1Core.Core.CI_RoleCode_>
+        </role>
+      </GM03_2_1Core.Core.MD_IdentificationpointOfContact>
+      <GM03_2_1Core.Core.CI_ResponsibleParty TID="xN1305243371">
+        <individualFirstName>Urs</individualFirstName>
+        <individualLastName>Bachmann</individualLastName>
+        <electronicalMailAddress>
+          <GM03_2_1Core.Core.URL_>
+            <value>urs.bachmann@be.ch</value>
+          </GM03_2_1Core.Core.URL_>
+        </electronicalMailAddress>
+        <organisationName>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Tiefbauamt - Dienstleistungszentrum / Managementsysteme</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </organisationName>
+        <address REF="xN1695255361" />
+        <contactInfo REF="xN1346917563" />
+      </GM03_2_1Core.Core.CI_ResponsibleParty>
+      <GM03_2_1Core.Core.CI_Address TID="xN1695255361">
+        <streetName>Reiterstrasse 11</streetName>
+        <postalCode>3013</postalCode>
+        <city>Bern</city>
+        <country>None</country>
+      </GM03_2_1Core.Core.CI_Address>
+      <GM03_2_1Core.Core.CI_Contact TID="xN1346917563" />
+      <GM03_2_1Core.Core.CI_Telephone TID="xN497240840">
+        <number>+41 31 633 35 11</number>
+        <numberType>mainNumber</numberType>
+        <CI_ResponsibleParty REF="xN1305243371" />
+      </GM03_2_1Core.Core.CI_Telephone>
+      <GM03_2_1Core.Core.MD_IdentificationpointOfContact>
+        <pointOfContact REF="xN2113625395" />
+        <MD_Identification REF="xN174557046" />
+        <role>
+          <GM03_2_1Core.Core.CI_RoleCode_>
+            <value>distributor</value>
+          </GM03_2_1Core.Core.CI_RoleCode_>
+        </role>
+      </GM03_2_1Core.Core.MD_IdentificationpointOfContact>
+      <GM03_2_1Core.Core.CI_ResponsibleParty TID="xN2113625395">
+        <individualFirstName>Bernadette</individualFirstName>
+        <individualLastName>Blättler</individualLastName>
+        <electronicalMailAddress>
+          <GM03_2_1Core.Core.URL_>
+            <value>bernadette.blaettler@be.ch</value>
+          </GM03_2_1Core.Core.URL_>
+        </electronicalMailAddress>
+        <organisationName>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Amt für Geoinformation - Geobasisdaten</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </organisationName>
+        <address REF="xN1930647191" />
+        <contactInfo REF="xN565505277" />
+      </GM03_2_1Core.Core.CI_ResponsibleParty>
+      <GM03_2_1Core.Core.CI_Address TID="xN1930647191">
+        <streetName>Reiterstrasse 11</streetName>
+        <postalCode>3013</postalCode>
+        <city>Bern</city>
+        <country>None</country>
+      </GM03_2_1Core.Core.CI_Address>
+      <GM03_2_1Core.Core.CI_Contact TID="xN565505277" />
+      <GM03_2_1Core.Core.CI_Telephone TID="xN2010900070">
+        <number>+41 31 633 33 11</number>
+        <numberType>mainNumber</numberType>
+        <CI_ResponsibleParty REF="xN2113625395" />
+      </GM03_2_1Core.Core.CI_Telephone>
+      <GM03_2_1Comprehensive.Comprehensive.MD_MaintenanceInformation TID="xN73413695">
+        <maintenanceAndUpdateFrequency>annually</maintenanceAndUpdateFrequency>
+        <MD_Identification REF="xN174557046" />
+      </GM03_2_1Comprehensive.Comprehensive.MD_MaintenanceInformation>
+      <GM03_2_1Core.Core.descriptiveKeywordsMD_Identification>
+        <descriptiveKeywords REF="xN1702585030" />
+        <MD_Identification REF="xN174557046" />
+      </GM03_2_1Core.Core.descriptiveKeywordsMD_Identification>
+      <GM03_2_1Core.Core.MD_Keywords TID="xN1702585030">
+        <keyword>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>opendata.swiss</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>fr</language>
+                <plainText>opendata.swiss</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Fließgewässer</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>fr</language>
+                <plainText>Eau courante</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Gewässernamen</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>fr</language>
+                <plainText>Nom du cours d'eau</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Gewässer</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>fr</language>
+                <plainText>Eaux (géographie)</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </keyword>
+      </GM03_2_1Core.Core.MD_Keywords>
+      <GM03_2_1Comprehensive.Comprehensive.resourceConstraintsMD_Identification>
+        <resourceConstraints REF="xN344375451" />
+        <MD_Identification REF="xN174557046" />
+      </GM03_2_1Comprehensive.Comprehensive.resourceConstraintsMD_Identification>
+      <GM03_2_1Comprehensive.Comprehensive.MD_Constraints TID="xN344375451">
+        <useLimitation>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>A: öffentlich zugängliche Geodaten</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>fr</language>
+                <plainText>A: géodonnées accessibles au public</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </useLimitation>
+      </GM03_2_1Comprehensive.Comprehensive.MD_Constraints>
+      <GM03_2_1Comprehensive.Comprehensive.resourceConstraintsMD_Identification>
+        <resourceConstraints REF="xN424391998" />
+        <MD_Identification REF="xN174557046" />
+      </GM03_2_1Comprehensive.Comprehensive.resourceConstraintsMD_Identification>
+      <GM03_2_1Comprehensive.Comprehensive.MD_LegalConstraints TID="xN424391998">
+        <useLimitation>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Gewässernetz des Kantons Bern © Tiefbauamt des Kantons Bern</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>fr</language>
+                <plainText>Réseau hydrographique du canton de Berne © Office des ponts et chaussées du canton de Berne</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </useLimitation>
+        <otherConstraints>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Freie Nutzung. Quellenangabe ist Pflicht.</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>fr</language>
+                <plainText>Utilisation libre. Obligation d’indiquer la source.</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Die Daten dürfen gemäss Nutzungsbedingungen frei genutzt werden.</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>fr</language>
+                <plainText>Les données peuvent être utilisées librement selon les conditions d’utilisation.</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </otherConstraints>
+      </GM03_2_1Comprehensive.Comprehensive.MD_LegalConstraints>
+      <GM03_2_1Core.Core.EX_Extent TID="xN954721752">
+        <description>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>Kanton Bern</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>fr</language>
+                <plainText>Canton de Berne</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </description>
+        <MD_DataIdentification REF="xN174557046" />
+      </GM03_2_1Core.Core.EX_Extent>
+      <GM03_2_1Core.Core.EX_ExtentgeographicElement>
+        <EX_Extent REF="xN954721752" />
+        <geographicElement REF="xN1006135864" />
+      </GM03_2_1Core.Core.EX_ExtentgeographicElement>
+      <GM03_2_1Core.Core.EX_GeographicBoundingBox TID="xN1006135864">
+        <extentTypeCode>true</extentTypeCode>
+        <northBoundLatitude>47.342308</northBoundLatitude>
+        <southBoundLatitude>46.323702</southBoundLatitude>
+        <eastBoundLongitude>8.471675</eastBoundLongitude>
+        <westBoundLongitude>6.849408</westBoundLongitude>
+      </GM03_2_1Core.Core.EX_GeographicBoundingBox>
+      <GM03_2_1Comprehensive.Comprehensive.MD_FeatureCatalogueDescription xmlns:gml320="http://www.opengis.net/gml" TID="xN1002540236">
+        <MD_Metadata REF="xN199479561" />
+        <includedWithDataset>false</includedWithDataset>
+        <modelType>FeatureDescription</modelType>
+      </GM03_2_1Comprehensive.Comprehensive.MD_FeatureCatalogueDescription>
+      <GM03_2_1Comprehensive.Comprehensive.CI_Citation TID="xN1231632461">
+        <title>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText />
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </title>
+        <MD_FeatureCatalogueDescription REF="xN1002540236" />
+      </GM03_2_1Comprehensive.Comprehensive.CI_Citation>
+      <GM03_2_1Core.Core.DQ_DataQuality xmlns:gml320="http://www.opengis.net/gml" TID="xN53452130">
+        <MD_Metadata REF="xN199479561" />
+      </GM03_2_1Core.Core.DQ_DataQuality>
+      <GM03_2_1Core.Core.DQ_Scope TID="xN1981545128">
+        <level>dataset</level>
+        <DQ_DataQuality REF="xN53452130" />
+      </GM03_2_1Core.Core.DQ_Scope>
+    </GM03_2_1Comprehensive.Comprehensive>
+  </DATASECTION>
+</TRANSFER>
+

@@ -1,3 +1,4 @@
+
 @startuml
 
 !include <tupadr3/common>
@@ -18,28 +19,57 @@ package "Datenquellen"{
 package "SIMI"{
     
     [SIMI] as simi
-    () rest as "HTTPS PUT"
-    rest - simi
+    () papi as "Für Publisher"
+    () sapi as "Für Datensuche"
+    simi - papi
+    sapi - simi
     
-    database "Meta-DB" {
-        [Meta-Tables] as mdb
+    database "Meta-DB" as mdb {
+        [Meta-Tables] as mtbl
+        [Meta-Views] as mv
+        note right of mv
+        **theme_v:** Datenbereitstellung
+        **themeitem_v:** Tabelle, Geotif, ...
+        **attribute_v:** Attributeigenschaften
+        end note
+        
+        mv --> mtbl
     }
+
+        [GM03-Exporter (GRETL)] as mex
+        [Pipeline (CURL)] as rex
+        
+        note right of rex
+          "CURL-Pipeline" deployt am Schluss
+          das neu konfigurierte Image
+        end note
+
     
-    package "Pipeline" as pipe {
-        [sql2json] as sj
-    }
-    
-    sj -up-> mdb
     simi --> mdb
+    
+    mex --up-> mv
+    rex ---up-> sapi : Auth?
 }
 
-[GDI WMTS] as wm
+[GDI WMTS] as wmts
+
+package "Links" as link {
+    [GDI WMS] as wms
+    [GDI WGC] as wgc
+    [geodienste] as ai
+}
 
 
 package "Datenbezug"{
+
+		package "Portale (opendata, geocat)" {
+			OFF_DOCUMENT(gm03, gm03.xtf)
+			[geocat] as gc
+			[opendata.swiss] as od
+		}
+
     package "Publisher (GRETL)" {
         [Publisher] as pub
-        OFF_DOCUMENT(pconf, config.json)
     }
     
     package "Datenablage"{
@@ -48,11 +78,16 @@ package "Datenbezug"{
     
     package "Datensuche" {
         [Datensuche] as ds
-        OFF_DOCUMENT(bconf, config.json)
+        OFF_DOCUMENT(bconf, config.yaml)
+        OFF_DOCUMENTS(regions, regions.json)
     }
     
     pub --> data : sftp (schreibend)
     ds --> data : https
+    note on link
+      - Daten-Zips
+      - detailbeschreibung.html
+    end note
 }
 
 package "Generische Clients"{
@@ -68,15 +103,26 @@ package "Datenadministration"{
 
 pub -up-> db : db con
 pub -up-> tf : filesys read
-pub -up-> rest : OAuth2
+pub -up-> papi : OAuth2
 
 httpc --> data : https
 ftpc  -left-> data : ftp (lesend)
 ftpadmin  -up-> data : sftp (schreibend)
 
-pipe --> pconf : ?filesys write?
-pipe --> bconf : filesys write
 
-ds ---> wm : Hintergrundkarte
+note on link
+  regions.json ist ein keyval json.
+  -key: region layer identifier
+  -val: layer als geojson
+end note
+
+mex --> gm03
+rex --> bconf
+
+od --> ds
+gc --> ds
+
+ds ---> wmts : Hintergrundkarte
+ds ---> link : Themen-Links
 
 @enduml

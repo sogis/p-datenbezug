@@ -29,6 +29,13 @@ Namenskonvention für die Dateien: \[Datenbereitstellungs-Identifier\].\[Format-
 >   * hist/
 >     * ...
 
+## Inhalt der Zip-Dateien
+
+Diese beinhalten neben den Geodaten-Dateien im "Root-Verzeichnis" im Unterverzeichnis /validation:
+
+* Das log der Validierung
+* Falls vorliegend: Die Validierungskonfiguration (TOML)
+
 ## Abbildung von Regionen-Einteilungen
 
 Die Regionen werden als Präfix der Dateien abgebildet. Die Ordnerstruktur bleibt gleich. Aufbau Dateiname:   

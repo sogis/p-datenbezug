@@ -4,7 +4,7 @@ Umfasst die Komponenten und Schnittstellen, mit welchen die öffentlichen Geodat
 
 ## Komponenten
 
-* **Publisher:** GRETL-Task, welcher für Vektordaten die aktuellsten Geodaten-Dateien bereitstellt und das Archiv der vorherigen Zeitstände pflegt.
+* **Publisher:** GRETL-Task, welcher für Vektordaten die aktuellsten Geodaten-Dateien bereitstellt und das Archiv der vorherigen Zeitstände pflegt. Liest und schreibt Metainformationen mittels Schnittstelle zu SIMI.
 * **Datensuche:** Webapplikation zum Suchen und Herunterladen der Geodaten mit einfach verständlicher Benutzeroberfläche.
 * **Datenablage:** Strukturierte und für fortgeschrittene Benutzer selbsterklärende Datenablage. Benutzer und automatisierte Datenprozesse beziehen die Datendateien direkt via HTTPS und anonymem FTP.
 
