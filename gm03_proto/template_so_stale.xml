@@ -25,9 +25,16 @@
         <distributionFormat REF="xN974872598" />
       </GM03_2_1Core.Core.MD_DistributiondistributionFormat>
       <GM03_2_1Comprehensive.Comprehensive.MD_Format TID="xN974872598">
-        <name>ZIP-File</name>
+        <name>ZIP (Inhalt fallabhängig INTERLIS, Geopackage, Shapefile, Dxf)</name>
         <version>-</version>
       </GM03_2_1Comprehensive.Comprehensive.MD_Format>
+
+
+      
+
+      
+
+
       <GM03_2_1Comprehensive.Comprehensive.MD_DigitalTransferOptions TID="xN1641022202">
         <MD_Distribution REF="xN1338974446" />
       </GM03_2_1Comprehensive.Comprehensive.MD_DigitalTransferOptions>
@@ -51,7 +58,7 @@
               <GM03_2_1Core.Core.PT_URLGroup>
                 <language>de</language>
                 <!-- $$const.filesBaseUrl,themepublication.identifier -->
-                <plainURL>https://files.geo.so.ch</plainURL>
+                <plainURL>https://files.geo.so.ch/ch.so.afu.fliessgewaesser.xtf.zip</plainURL>
               </GM03_2_1Core.Core.PT_URLGroup>
 <!--               <GM03_2_1Core.Core.PT_URLGroup>
                 <language>de</language>
@@ -80,8 +87,8 @@
             <URLGroup>
               <GM03_2_1Core.Core.PT_URLGroup>
                 <language>de</language>
-                <!-- $$const.searchBaseUrl, themepublication.identifier -->
-                <plainURL>https://data.geo.so.ch</plainURL>
+                <!-- $$const.dataSearchBaseUrl, themepublication.identifier -->
+                <plainURL>https://data.geo.so.ch/ch.so.afu.fliessgewaesser</plainURL>
               </GM03_2_1Core.Core.PT_URLGroup>
 <!--               <GM03_2_1Core.Core.PT_URLGroup>
                 <language>de</language>
@@ -168,15 +175,15 @@
         </linkage>
         <MD_DigitalTransferOptions REF="xN1641022202" />
       </GM03_2_1Core.Core.CI_OnlineResource>
-      <GM03_2_1Core.Core.MD_Metadatacontact>
-        <contact REF="921f00a6-5d6b-4213-be0f-65eee7acb303" />
-        <MD_Metadata REF="xN2074104447" />
+      <GM03_2_1Core.Core.MD_IdentificationpointOfContact>
+        <pointOfContact REF="921f00a6-5d6b-4213-be0f-65eee7acb303" />
+        <MD_Identification REF="xN1935750059" />
         <role>
           <GM03_2_1Core.Core.CI_RoleCode_>
             <value>distributor</value>
           </GM03_2_1Core.Core.CI_RoleCode_>
         </role>
-      </GM03_2_1Core.Core.MD_Metadatacontact>
+      </GM03_2_1Core.Core.MD_IdentificationpointOfContact>
       <GM03_2_1Core.Core.CI_ResponsibleParty TID="921f00a6-5d6b-4213-be0f-65eee7acb303">
         <electronicalMailAddress>
           <GM03_2_1Core.Core.URL_>
@@ -204,7 +211,6 @@
           </GM03_2_1Core.Core.PT_FreeURL>
         </linkage>
         <address REF="6e46e914-3ab8-4c32-876c-2f6e57a5c3ea" />
-        <!-- <contactInfo REF="xN1311225693" /> -->
       </GM03_2_1Core.Core.CI_ResponsibleParty>
       <GM03_2_1Core.Core.CI_Address TID="6e46e914-3ab8-4c32-876c-2f6e57a5c3ea">
         <postalCode>4500</postalCode>
@@ -216,9 +222,6 @@
         <numberType>mainNumber</numberType>
         <CI_ResponsibleParty REF="921f00a6-5d6b-4213-be0f-65eee7acb303" />
       </GM03_2_1Core.Core.CI_Telephone>
-
-
-
       <GM03_2_1Core.Core.MD_Metadatacontact>
         <contact REF="xN1564836589" />
         <MD_Metadata REF="xN2074104447" />
@@ -228,6 +231,15 @@
           </GM03_2_1Core.Core.CI_RoleCode_>
         </role>
       </GM03_2_1Core.Core.MD_Metadatacontact>
+      <GM03_2_1Core.Core.MD_IdentificationpointOfContact>
+        <pointOfContact REF="xN1564836589" />
+        <MD_Identification REF="xN1935750059" />
+        <role>
+          <GM03_2_1Core.Core.CI_RoleCode_>
+            <value>owner</value>
+          </GM03_2_1Core.Core.CI_RoleCode_>
+        </role>
+      </GM03_2_1Core.Core.MD_IdentificationpointOfContact>
       <GM03_2_1Core.Core.CI_ResponsibleParty TID="xN1564836589">
 <!--         <individualFirstName>Olivier</individualFirstName>
         <individualLastName>Scheurer</individualLastName> -->
@@ -301,6 +313,30 @@
         <numberType>mainNumber</numberType>
         <CI_ResponsibleParty REF="xN1564836589" />
       </GM03_2_1Core.Core.CI_Telephone>
+      <GM03_2_1Core.Core.referenceSystemInfoMD_Metadata>
+        <referenceSystemInfo REF="xw13721473aac23b1" />
+        <MD_Metadata REF="xN2074104447" />
+      </GM03_2_1Core.Core.referenceSystemInfoMD_Metadata>
+      <GM03_2_1Core.Core.MD_ReferenceSystem TID="xw13721473aac23b1">
+        <referenceSystemIdentifier REF="xw13721473aac23b1b1b1" />
+      </GM03_2_1Core.Core.MD_ReferenceSystem>
+      <GM03_2_1Comprehensive.Comprehensive.RS_Identifier TID="xw13721473aac23b1b1b1">
+        <code>
+          <GM03_2_1Core.Core.PT_FreeText>
+            <textGroup>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>de</language>
+                <plainText>EPSG:2056</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+              <GM03_2_1Core.Core.PT_Group>
+                <language>fr</language>
+                <plainText>EPSG:2056</plainText>
+              </GM03_2_1Core.Core.PT_Group>
+            </textGroup>
+          </GM03_2_1Core.Core.PT_FreeText>
+        </code>
+        <codeSpace>CH1903+ / LV95 -- Swiss CH1903+ / LV95</codeSpace>
+      </GM03_2_1Comprehensive.Comprehensive.RS_Identifier>
       <GM03_2_1Comprehensive.Comprehensive.MD_VectorSpatialRepresentation xmlns:gml320="http://www.opengis.net/gml" TID="xN493289705">
         <MD_Metadata REF="xN2074104447" />
       </GM03_2_1Comprehensive.Comprehensive.MD_VectorSpatialRepresentation>
@@ -390,16 +426,17 @@
         </collectiveTitle>
       </GM03_2_1Comprehensive.Comprehensive.CI_Citation>
       <GM03_2_1Core.Core.CI_Date TID="xw13721235aac29b1b1b1b3b1">
-        <date>2021-01-11</date>
+        <!-- $$themepublication.lastpublished -->
+        <date>2011-11-11</date>
         <dateType>creation</dateType>
         <CI_Citation REF="xN2133258067" />
       </GM03_2_1Core.Core.CI_Date>
-      <GM03_2_1Core.Core.CI_Date TID="xw13721235aac29b1b1b1b5b1">
+<!--       <GM03_2_1Core.Core.CI_Date TID="xw13721235aac29b1b1b1b5b1">
         <date>2021-01-11</date>
         <dateType>creation</dateType>
         <CI_Citation REF="xN2133258067" />
-      </GM03_2_1Core.Core.CI_Date>
-      <GM03_2_1Core.Core.MD_IdentificationpointOfContact>
+      </GM03_2_1Core.Core.CI_Date> -->
+      <!--<GM03_2_1Core.Core.MD_IdentificationpointOfContact>
         <pointOfContact REF="xN1675703055" />
         <MD_Identification REF="xN1935750059" />
         <role>
@@ -408,7 +445,7 @@
           </GM03_2_1Core.Core.CI_RoleCode_>
         </role>
       </GM03_2_1Core.Core.MD_IdentificationpointOfContact>
-      <GM03_2_1Core.Core.CI_ResponsibleParty TID="xN1675703055">
+  <GM03_2_1Core.Core.CI_ResponsibleParty TID="xN1675703055">
         <electronicalMailAddress>
           <GM03_2_1Core.Core.URL_>
             <value>mailto:olivier.scheurer@gl.ch</value>
@@ -426,7 +463,7 @@
         </organisationName>
         <address REF="xN721044946" />
         <contactInfo REF="xN1465410282" />
-      </GM03_2_1Core.Core.CI_ResponsibleParty>
+      </GM03_2_1Core.Core.CI_ResponsibleParty> -->
       <GM03_2_1Core.Core.CI_Address TID="xN721044946">
         <streetName>Kirchstrasse</streetName>
         <streetNumber>2</streetNumber>
@@ -435,7 +472,7 @@
         <country>CH</country>
       </GM03_2_1Core.Core.CI_Address>
       <GM03_2_1Core.Core.CI_Contact TID="xN1465410282" />
-      <GM03_2_1Core.Core.MD_IdentificationpointOfContact>
+<!--       <GM03_2_1Core.Core.MD_IdentificationpointOfContact>
         <pointOfContact REF="xN1733973" />
         <MD_Identification REF="xN1935750059" />
         <role>
@@ -468,7 +505,7 @@
         </organisationAcronym>
         <address REF="xN1034318501" />
         <contactInfo REF="xN646706671" />
-      </GM03_2_1Core.Core.CI_ResponsibleParty>
+      </GM03_2_1Core.Core.CI_ResponsibleParty> -->
       <GM03_2_1Core.Core.CI_Address TID="xN1034318501" />
       <GM03_2_1Core.Core.CI_Contact TID="xN646706671" />
       <GM03_2_1Comprehensive.Comprehensive.MD_MaintenanceInformation TID="xN1092995161">

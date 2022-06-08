@@ -18,38 +18,35 @@ package "Datenquellen"{
 
 package "SIMI"{
     
-    [SIMI] as simi
+    component "SIMI" as simi {
+      [metaBean2File]
+    }
     () papi as "Für Publisher"
-    () sapi as "Für Datensuche"
     simi - papi
-    sapi - simi
     
     database "Meta-DB" as mdb {
-        [Meta-Tables] as mtbl
-        [Meta-Views] as mv
-        note right of mv
-        **theme_v:** Datenbereitstellung
-        **themeitem_v:** Tabelle, Geotif, ...
-        **attribute_v:** Attributeigenschaften
-        end note
-        
-        mv --> mtbl
+        [Tables / Views] as mtrel
     }
-
-        [GM03-Exporter (GRETL)] as mex
-        [Pipeline (CURL)] as rex
-        
-        note right of rex
-          "CURL-Pipeline" deployt am Schluss
-          das neu konfigurierte Image
-        end note
-
     
     simi --> mdb
-    
-    mex --up-> mv
-    rex ---up-> sapi : Auth?
 }
+
+package "Pipeline? / GRETL?" as dag {
+
+    component "Meta-Exporter" as mex {
+      [metaBean2File ]
+    }
+}
+note left of dag
+  Anforderungen:
+  - lokal auf Terminal ausführbar
+  - Portale
+    - sftp upload mit pki
+    - Konf-Dateien in Datensuche-Image brennen
+  - Datensuche
+    - Konf-Dateien in Image brennen
+    - Image deployen
+end note
 
 [GDI WMTS] as wmts
 
@@ -63,7 +60,7 @@ package "Links" as link {
 package "Datenbezug"{
 
 		package "Portale (opendata, geocat)" {
-			OFF_DOCUMENT(gm03, gm03.xtf)
+			OFF_DOCUMENTS(gm03, ThemePubs (*.xtf))
 			[geocat] as gc
 			[opendata.swiss] as od
 		}
@@ -78,8 +75,7 @@ package "Datenbezug"{
     
     package "Datensuche" {
         [Datensuche] as ds
-        OFF_DOCUMENT(bconf, config.yaml)
-        OFF_DOCUMENTS(regions, regions.json)
+        OFF_DOCUMENTS(bconf, Konf-Dateien (*.*))
     }
     
     pub --> data : sftp (schreibend)
@@ -116,8 +112,9 @@ note on link
   -val: layer als geojson
 end note
 
+mex -up-> mtrel
 mex --> gm03
-rex --> bconf
+mex --> bconf
 
 od --> ds
 gc --> ds
