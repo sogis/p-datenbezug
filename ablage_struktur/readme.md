@@ -2,7 +2,7 @@
 
 ## Gängiger Fall: Zwei Modelle, keine Regionen
 
-Publikation in den beiden Datenbereitstelungen ch.so.avt.verkehrszaehlstellen und ch.so.avt.verkehrszaehlstellen.edit
+Publikation in den beiden Datenbereitstelungen ch.so.avt.verkehrszaehlstellen und ch.so.avt.verkehrszaehlstellen.relational
 
 Namenskonvention für die Dateien: \[Datenbereitstellungs-Identifier\].\[Format-Identifier\].zip
 
@@ -20,9 +20,9 @@ Namenskonvention für die Dateien: \[Datenbereitstellungs-Identifier\].\[Format-
 >     * 2021.04.12/ -- intern identisch aufgebaut wie Ordner aktuell/
 >     * 2021.03.14/
 >     * ...
-> * ch.so.avt.verkehrszaehlstellen.edit/
+> * ch.so.avt.verkehrszaehlstellen.relational/
 >   * aktuell/
->       * ch.so.avt.verkehrszaehlstellen.edit.xtf.zip
+>       * ch.so.avt.verkehrszaehlstellen.relational.xtf.zip
 >       * meta/
 >         * SO_AVT_Verkehrszaehlstellen_20190206.ili  
 >         * publishdate.json      

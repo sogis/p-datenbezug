@@ -13,7 +13,7 @@
         * publishdate.json      
     * edit/
         * aedermannsdorf_2421/
-          * ch.so.agi.vermessung.edit__aedermannsdorf_2421.xtf
+          * ch.so.agi.vermessung.relational__aedermannsdorf_2421.xtf
         * aeschi_2511/
           * ...
         * ...
@@ -28,7 +28,7 @@
   * \[aktuell/\]
     * \[data/\] -- Kantonsweise mit Nutzungsformaten --> Analog vermessung/data
     * edit_kommunal -- Gemeindeweise --> Analog wie vermessung/edit
-    * edit_kantonal -- Kantonsweise ohne Nutzungsformate (Geodaten ausschliesslich als ch.so.agi.vermessung.edit_kantonal.xtf)
+    * edit_kantonal -- Kantonsweise ohne Nutzungsformate (Geodaten ausschliesslich als ch.so.agi.vermessung.relational_kantonal.xtf)
   * hist/
     * 2021.06.03/
 * ch.so.agi.lidar_2019

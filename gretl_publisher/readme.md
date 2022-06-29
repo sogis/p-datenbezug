@@ -10,7 +10,7 @@ Für den Datenbezug wird das build.gradle mit zwei Aufrufen des neuen Publisher-
     defaultTasks 'pubProduct'
 
     task pubEdit(type: Publisher){
-      publishTopics = [ch.so.avt.verkehrszaehlstellen.edit]
+      publishTopics = [ch.so.avt.verkehrszaehlstellen.relational]
       ...
     }
 
@@ -31,7 +31,7 @@ Bei Problemen mit der Datenqualität der Originaldaten schlägt der Task "pubEdi
 
 In der Nutzungsplanung werden voraussichtlich im gleichen Job kommunale und kantonale Datenthemen publiziert:
 
-1. Publisher: \[ch.so.arp.nutzungsplanung.**kommunal.edit**, ch.so.arp.nutzungsplanung.**kantonal.edit**\]
+1. Publisher: \[ch.so.arp.nutzungsplanung.**kommunal.relational**, ch.so.arp.nutzungsplanung.**kantonal.relational**\]
 1. Datentransfers in Pub-Modell-Schemen
 1. Publisher: \[ch.so.arp.nutzungsplanung.**kommunal**, ch.so.arp.nutzungsplanung.**kantonal**\]
 

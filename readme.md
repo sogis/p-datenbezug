@@ -47,7 +47,7 @@ Die Datenbereitstellung ist die zentrale Klasse im Datenbezug.
 |Datenbereitstellung|Bemerkungen|
 |---|---|
 |ch.so.avt.verkehrszaelstellen|Bereitstellung für die Nutzung (= Pub-Modell)|
-|ch.so.avt.verkehrszaelstellen.edit|Bereitstellung für die Nachführung (= Edit-Modell)|
+|ch.so.avt.verkehrszaelstellen.relational|Bereitstellung für die Nachführung (= Edit-Modell)|
 
 Für die Verkehrszählstellen umfasst der Nachführungsprozess "nur" ein Datenthema
 
@@ -56,9 +56,9 @@ Für die Verkehrszählstellen umfasst der Nachführungsprozess "nur" ein Datenth
 |Nachführung|Datenbereitstellung|Bemerkungen|
 |---|---|---|
 |Kantonal|ch.so.arp.nutzungsplanung.kantonal|Bereitstellung für die Nutzung (= Pub-Modell)|
-|Kantonal|ch.so.arp.nutzungsplanung.kantonal.edit|Bereitstellung für die Nachführung (= Edit-Modell)|
+|Kantonal|ch.so.arp.nutzungsplanung.kantonal.relational|Bereitstellung für die Nachführung (= Edit-Modell)|
 |Kommunal|ch.so.arp.nutzungsplanung.kommunal|Bereitstellung für die Nutzung (= Pub-Modell)|
-|Kommunal|ch.so.arp.nutzungsplanung.kommunal.edit|Bereitstellung für die Nachführung (= Edit-Modell)|
+|Kommunal|ch.so.arp.nutzungsplanung.kommunal.relational|Bereitstellung für die Nachführung (= Edit-Modell)|
 
 ## Links
 
