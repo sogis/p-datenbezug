@@ -16,9 +16,9 @@ package "Datenquellen"{
     }
 }
 
-package "SIMI"{
+node "SIMI"{
     
-    component "SIMI" as simi {
+    component "SIMI (Web-App)" as simi {
       [metaBean2File]
     }
     () papi as "Für Publisher"
@@ -31,22 +31,13 @@ package "SIMI"{
     simi --> mdb
 }
 
-package "Pipeline (oder Gradle)" as dag {
+node "Pipeline (Jenkins)" as dag {
 
     component "Meta-Exporter" as mex {
       [metaBean2File ]
     }
 }
-note left of dag
-  Anforderungen:
-  - Portale
-    - sftp upload mit pki
-    - Konf-Dateien in Datensuche-Image brennen
-  - Datensuche
-    - Konf-Dateien in Image brennen
-    - Image deployen
-  - (lokal auf Terminal ausführbar)
-end note
+
 
 [GDI WMTS] as wmts
 
@@ -60,20 +51,20 @@ package "Links" as link {
 package "Datenbezug"{
 
 		package "Portale (opendata, geocat)" {
-			OFF_DOCUMENTS(gm03, ThemePubs (*.xtf))
+			OFF_DOCUMENTS(isoCH, ISO-CH Metadaten (*.xml))
 			[geocat] as gc
 			[opendata.swiss] as od
 		}
 
-    package "Publisher (GRETL)" {
+    node "Publisher (GRETL)" {
         [Publisher] as pub
     }
     
-    package "Datenablage"{
+    node "Datenablage (AIO)"{
         OFF_DOCUMENTS(data, Daten-Dateien)
     }
     
-    package "Datensuche" {
+    node "Datensuche" {
         [Datensuche] as ds
         OFF_DOCUMENTS(bconf, Konf-Dateien (*.*))
     }
@@ -97,27 +88,21 @@ package "Datenadministration"{
     [FTP-Client] as ftpadmin
 }
 
-pub -up-> db : db con
+pub -up-> db : DB Verbindung
 pub -up-> tf : filesys read
 pub -up-> papi : OAuth2
 
 httpc --> data : https
-ftpc  -left-> data : ftp (lesend)
+ftpc  -left-> data : sftp (lesend)
 ftpadmin  -up-> data : sftp (schreibend)
 
 
-note on link
-  regions.json ist ein keyval json.
-  -key: region layer identifier
-  -val: layer als geojson
-end note
+mex -up-> mtrel : DB Verbindung
+mex --> isoCH : sftp
+mex --> bconf : In Image brennen
 
-mex -up-> mtrel
-mex --> gm03
-mex --> bconf
-
-od --> ds
-gc --> ds
+od --> ds : HTTP Link
+gc --> ds : HTTP Link
 
 ds ---> wmts : Hintergrundkarte
 ds ---> link : Themen-Links

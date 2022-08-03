@@ -4,11 +4,26 @@ Umfasst die Komponenten und Schnittstellen, mit welchen die öffentlichen Geodat
 
 ## Komponenten
 
-* **Publisher:** GRETL-Task, welcher für Vektordaten die aktuellsten Geodaten-Dateien bereitstellt und das Archiv der vorherigen Zeitstände pflegt. Liest und schreibt Metainformationen mittels Schnittstelle zu SIMI.
-* **Datensuche:** Webapplikation zum Suchen und Herunterladen der Geodaten mit einfach verständlicher Benutzeroberfläche.
-* **Datenablage:** Strukturierte und für fortgeschrittene Benutzer selbsterklärende Datenablage. Benutzer und automatisierte Datenprozesse beziehen die Datendateien direkt via HTTPS und anonymem FTP.
-
 ![Uebersichtsdiagramm](res/uebersicht.png)
+
+
+* **SIMI:** 
+  * Erweiterung von Metamodell und Masken mit den Tabellen für die Themen-Verwaltung.
+  * Einbinden des Jar "metaBean2File" zwecks Generieren der Detailbeschreibung pro Tabelle für die Schnittstelle zum Publisher.
+* **Pipeline:**   
+Erstellen einer neuen Pipeline, welche jeweils frühmorgens nach Zeitplan ausgeführt wird.   
+Inhalt:
+  * Aktualisierung Datensuche:   
+  Export der Konfig-Datei mittels Kommandozeilentool "Meta-Exporter". Mit Datei und "Base-Image" neues "Runtime-Image" der Datensuche brennen und deployen.
+  * Aktualisierung Geocat:   
+  Export der ISO-CH XML-Dateien mittels "Meta-Exporter". Upload via sftp auf Geocat.
+* **Datensuche:**   
+Webapplikation zum Suchen und Herunterladen der Geodaten mit einfach verständlicher Benutzeroberfläche.   
+Wird von den Portalen verlinkt und bietet darum "Direktlinks" auf eine Themen-Bereitstellung an. Bsp MO-Public: "https://data.geo.so.ch/ch.so.av.mopublic"
+* **Publisher:**   
+GRETL-Task, welcher für Vektordaten die aktuellsten Geodaten-Dateien bereitstellt und das Archiv der vorherigen Zeitstände pflegt. Liest und schreibt Metainformationen mittels Schnittstelle zu SIMI.
+* **Datenablage:**   
+Strukturierte und für fortgeschrittene Benutzer selbsterklärende Datenablage. Benutzer und automatisierte Datenprozesse beziehen die Datendateien direkt via HTTPS und anonymem FTP.
 
 ## Technische Anwendungsfälle
 
